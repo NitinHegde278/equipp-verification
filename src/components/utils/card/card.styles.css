@@ -1,0 +1,28 @@
+.card {
+  width: 380px;
+  height: 450px;
+}
+
+.imgArt {
+  width: 230px;
+}
+
+.card-title {
+  width: 220px;
+  color: var(--background-green);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.card-subtitle {
+  width: 300px;
+  color: var(--card-subtitle);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 1vh;
+}

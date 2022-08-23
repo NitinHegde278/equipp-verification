@@ -1,0 +1,56 @@
+.row {
+  height: 100vh;
+}
+
+.left-panel {
+  background-color: var(--onboard-green);
+}
+
+.right-panel {
+  row-gap: 5vh;
+  padding-left: 4vw;
+  text-align: start;
+}
+
+.group-logo {
+  margin-top: 70px;
+  width: 101px;
+  height: 96px;
+}
+
+.main-logo {
+  margin-top: 30px;
+  width: 220px;
+}
+
+.sub-content {
+  font-size: 10px;
+  color: var(--onboard-sub-text);
+  margin-top: 26vh;
+}
+
+.button-continue {
+  margin-top: 4vh;
+}
+
+.art-board {
+  width: 500px;
+  margin-left: -2vw;
+}
+
+.main-content {
+  color: var(--onboard-main-text);
+  width: 400px;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 40px;
+  margin-top: -80px;
+}
+
+.bottom-text {
+  color: var(--onboard-sub-text);
+  width: 300px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+}
