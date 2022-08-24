@@ -3,7 +3,7 @@ import GroupLogo from "../../assets/images/GrouplogoTop.svg";
 import MainLogo from "../../assets/images/mainLogo.svg";
 import Button from "../utils/button/button.component";
 import Arrow from "../../assets/images/arrow.svg";
-import ArtBoard from "../../assets/images/Artboard.svg";
+import { ReactComponent as ArtBoard } from "../../assets/images/Artboard.svg";
 import { useNavigate } from "react-router-dom";
 
 const Onboard = () => {
@@ -35,7 +35,9 @@ const Onboard = () => {
         </span>
       </div>
       <div className="right-panel col-md-7 d-flex flex-column">
-        <img className="art-board" src={ArtBoard} alt="Art Board" />
+        <div className="art-board">
+          <ArtBoard />
+        </div>
         <span className="main-content">
           Get tech when you want, As long as you want
         </span>

@@ -1,7 +1,5 @@
-import React from "react";
-
 const OtpCard = () => {
-  return <div>otp-card.component</div>;
+  return <div>Otp Card</div>;
 };
 
 export default OtpCard;

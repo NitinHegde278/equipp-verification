@@ -34,7 +34,7 @@
 }
 
 .art-board {
-  width: 500px;
+  height: 420px;
   margin-left: -2vw;
 }
 
@@ -51,6 +51,6 @@
   color: var(--onboard-sub-text);
   width: 300px;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
 }

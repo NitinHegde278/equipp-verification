@@ -1,0 +1,3 @@
+export const USER_ACTION_TYPES = {
+  CHANGE_INPUT: "CHANGE_INPUT",
+};
