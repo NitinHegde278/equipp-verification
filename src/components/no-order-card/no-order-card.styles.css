@@ -1,0 +1,23 @@
+.main-text {
+  width: 300px;
+  color: var(--background-green);
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  text-align: center;
+  margin: auto;
+}
+
+.sub-text {
+  width: 260px;
+  color: var(--card-subtitle);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  margin: 4vh auto;
+}
+
+.mobile {
+  color: var(--onboard-main-text);
+}

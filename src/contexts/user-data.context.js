@@ -10,11 +10,12 @@ export const UserDataContext = createContext({
   mobileNumber: "",
   fullName: "",
   emailId: "",
+  otp: "",
   changeInput: () => {},
 });
 
 export const UserDataProvider = ({ children }) => {
-  const [{ mobileNumber, fullName, emailId }, dispatch] = useReducer(
+  const [{ mobileNumber, fullName, emailId, otp }, dispatch] = useReducer(
     userDataReducer,
     USER_INITIAL_STATE
   );
@@ -32,6 +33,7 @@ export const UserDataProvider = ({ children }) => {
     mobileNumber,
     fullName,
     emailId,
+    otp,
     changeInput,
   };
 

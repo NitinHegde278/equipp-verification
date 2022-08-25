@@ -19,7 +19,24 @@ const MobileCard = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate("/layout/nameEmail");
+
+    // Mock case: If the user already exists (Mock backend response)
+    if (mobileNumber === "1234567891") {
+      const mockResponse = {
+        mobileNumber: "1234567891",
+        fullName: "Nitin Hegde",
+        emailId: "test123@gmail.com",
+        otp: "123456",
+      };
+      changeInput("fullName", mockResponse.fullName);
+      changeInput("emailId", mockResponse.emailId);
+      changeInput("otp", mockResponse.otp);
+      navigate("/layout/otp");
+    } else {
+      changeInput("fullName", "");
+      changeInput("emailId", "");
+      navigate("/layout/nameEmail");
+    }
   };
 
   return (

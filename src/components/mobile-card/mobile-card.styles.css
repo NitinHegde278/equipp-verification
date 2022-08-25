@@ -3,3 +3,9 @@
   width: 25vw;
   margin: 20px 0;
 }
+
+#mobileNumber:focus {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}

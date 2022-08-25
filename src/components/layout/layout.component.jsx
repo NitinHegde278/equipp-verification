@@ -9,6 +9,7 @@ const NameEmailCard = lazy(() =>
 );
 const OtpCard = lazy(() => import("../otp-card/otp-card.component"));
 const NoPage = lazy(() => import("../no-page/no-page.component"));
+const Orders = lazy(() => import("../orders/orders.component"));
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Layout = () => {
           <Route index path="mobile" element={<MobileCard />} />
           <Route path="nameEmail" element={<NameEmailCard />} />
           <Route path="otp" element={<OtpCard />} />
+          <Route path="orders" element={<Orders />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>

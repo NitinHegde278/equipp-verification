@@ -4,6 +4,7 @@ export const USER_INITIAL_STATE = {
   mobileNumber: "",
   fullName: "",
   emailId: "",
+  otp: "",
 };
 
 export const userDataReducer = (state, action) => {

@@ -1,0 +1,31 @@
+.otp-container {
+  width: 325px;
+  column-gap: 10px;
+}
+
+.otp-field {
+  width: 46px;
+  height: 49px;
+  text-align: center;
+  border: 1px solid var(--onboard-main-text);
+}
+
+.otp-resend {
+  color: var(--otp-resend-text);
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  margin: 2vh 0;
+}
+
+.otp-error {
+  font-size: 12px;
+  color: var(--onboard-main-text);
+  margin-top: 1vh;
+}
+
+.otp-field:focus {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}

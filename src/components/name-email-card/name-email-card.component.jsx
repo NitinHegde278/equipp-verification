@@ -19,6 +19,11 @@ const NameEmailCard = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    //Assuming the otp will be coming from backend response (Mock backend)
+    const mockResponse = {
+      otp: "123456",
+    };
+    changeInput("otp", mockResponse.otp);
     navigate("/layout/otp");
   };
 

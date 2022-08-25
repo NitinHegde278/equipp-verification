@@ -14,7 +14,7 @@ const Onboard = () => {
   };
 
   return (
-    <div className="row container-fluid">
+    <div className="row container-fluid onboard-container">
       <div className="left-panel col-md-5 d-flex flex-column align-items-center">
         <img className="group-logo" src={GroupLogo} alt="Group Logo" />
         <img className="main-logo" src={MainLogo} alt="Equipp logo" />
