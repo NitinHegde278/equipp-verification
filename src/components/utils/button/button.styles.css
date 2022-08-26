@@ -7,3 +7,9 @@
   border-radius: 10px;
   border: 0;
 }
+
+@media screen and (max-width: 385px) {
+  .button-common {
+    width: 100%;
+  }
+}

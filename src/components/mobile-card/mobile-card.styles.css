@@ -1,6 +1,5 @@
 #mobileNumber {
   height: 50px;
-  width: 25vw;
   margin: 20px 0;
 }
 
@@ -8,4 +7,10 @@
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (max-width: 385px) {
+  #mobileNumber {
+    width: 100%;
+  }
 }

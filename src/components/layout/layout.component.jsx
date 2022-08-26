@@ -24,7 +24,7 @@ const Layout = () => {
           onClick={() => navigate("/")}
         />
       </div>
-      <div className="d-flex flex-row justify-content-center">
+      <div className="d-flex flex-row justify-content-center layout-card">
         <Routes>
           <Route index path="mobile" element={<MobileCard />} />
           <Route path="nameEmail" element={<NameEmailCard />} />

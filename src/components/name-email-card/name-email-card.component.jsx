@@ -1,5 +1,5 @@
 import { ReactComponent as NameEmailArt } from "../../assets/images/nameEmailArt.svg";
-import GreenArrow from "../../assets/images/greenArrow.svg";
+import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Card from "../utils/card/card.component";
 import "./name-email-card.styles.css";
 import Button from "../utils/button/button.component";
@@ -69,7 +69,7 @@ const NameEmailCard = () => {
           }}
         >
           CONTINUE &nbsp;
-          <img src={GreenArrow} alt="arrow" />
+          <img src={GreenRightArrow} alt="arrow" />
         </Button>
       </form>
     </Card>

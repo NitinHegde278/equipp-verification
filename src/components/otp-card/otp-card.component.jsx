@@ -1,7 +1,7 @@
 import { useCallback, useContext, useEffect, useState } from "react";
 import { ReactComponent as OtpArt } from "../../assets/images/otpArt.svg";
 import { UserDataContext } from "../../contexts/user-data.context";
-import GreenArrow from "../../assets/images/greenArrow.svg";
+import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Button from "../utils/button/button.component";
 import Card from "../utils/card/card.component";
 import "./otp-card.styles.css";
@@ -148,7 +148,7 @@ const OtpCard = () => {
           }}
         >
           CONTINUE &nbsp;
-          <img src={GreenArrow} alt="arrow" />
+          <img src={GreenRightArrow} alt="arrow" />
         </Button>
         {otpError && <div className="otp-error">{otpError}</div>}
       </form>

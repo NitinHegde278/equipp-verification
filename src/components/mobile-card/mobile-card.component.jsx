@@ -1,6 +1,6 @@
 import Button from "../utils/button/button.component";
 import { ReactComponent as MobileArt } from "../../assets/images/mobileArt.svg";
-import GreenArrow from "../../assets/images/greenArrow.svg";
+import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Card from "../utils/card/card.component";
 import "./mobile-card.styles.css";
 import { useContext } from "react";
@@ -69,7 +69,7 @@ const MobileCard = () => {
           }}
         >
           CONTINUE &nbsp;
-          <img src={GreenArrow} alt="arrow" />
+          <img src={GreenRightArrow} alt="arrow" />
         </Button>
       </form>
     </Card>

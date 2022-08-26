@@ -4,7 +4,7 @@ import OrderCard from "../utils/order-card/order-card.component";
 import "./orders.styles.css";
 
 const Orders = () => {
-  const orders = [];
+  const orders = [{ name: "sample" }];
   return (
     <>
       {orders.length ? (
