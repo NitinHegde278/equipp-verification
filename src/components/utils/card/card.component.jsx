@@ -4,7 +4,7 @@ const Card = ({ title, subTitle, subText, Image, children }) => {
   return (
     <div className="card d-flex flex-column align-items-center">
       {title && (
-        <div className="card-title">
+        <div className="card-title card-main-title">
           {title} <br /> {subTitle && <div>{subTitle}</div>}
         </div>
       )}

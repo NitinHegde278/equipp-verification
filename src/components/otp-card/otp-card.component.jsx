@@ -13,14 +13,6 @@ const OtpCard = () => {
   const [otpObj, setOtpObj] = useState({});
   const [otpError, setOtpError] = useState("");
   const [timer, setTimer] = useState(60);
-  const timeOutCallback = useCallback(
-    () => setTimer((currTimer) => currTimer - 1),
-    []
-  );
-
-  useEffect(() => {
-    timer > 0 && setTimeout(timeOutCallback, 1000);
-  }, [timer, timeOutCallback]);
 
   const maskedMobileNumber = mobileNumber.replace(
     mobileNumber.substring(2, 9),
@@ -28,6 +20,20 @@ const OtpCard = () => {
   );
 
   const maskedEmailId = emailId.replace(emailId.substring(2, 6), "****");
+
+  const timeOutCallback = useCallback(
+    () => setTimer((currTimer) => currTimer - 1),
+    []
+  );
+
+  useEffect(() => {
+    let timeOut = null;
+    if (timer > 0) timeOut = setTimeout(timeOutCallback, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [timer, timeOutCallback]);
 
   useEffect(() => {
     const otpField = document.querySelectorAll(".otp-field");

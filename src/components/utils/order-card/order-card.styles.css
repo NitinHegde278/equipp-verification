@@ -14,7 +14,11 @@
 }
 
 .image-container {
-  flex-grow: 0.5 !important;
+  flex-grow: 0.4 !important;
+}
+
+.main-container {
+  padding: 0;
 }
 
 .mid-details {
@@ -31,16 +35,123 @@
   border-radius: 0 0 8px 8px;
 }
 
-.show {
-  cursor: pointer;
-  width: 101px;
-  height: 28px;
-  font-size: 10px;
-  font-weight: 500;
+.order-footer {
   background: none;
   border: none;
-  margin-left: -1.5vw;
+  width: 100%;
+  height: 28px;
+  padding-left: 8px;
+}
+.show {
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  text-align: start;
   color: var(--onboard-main-text);
+}
+
+.show-less {
+  transform: rotate(180deg);
+  transition: transform 0.2s linear;
+}
+
+.show-more {
+  transform: rotate(0deg);
+  transition: transform 0.2s linear;
+}
+
+.title {
+  width: 201px;
+  margin: 10px 0px 10px 8px;
+  text-align: start;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--order-card-title);
+}
+
+.main-container .card-body {
+  padding: 0;
+  margin-left: 8px;
+}
+
+.payment-cycle {
+  margin-top: 2px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: start;
+}
+
+.payment-cycle .content {
+  font-weight: 600;
+  color: var(--onboard-main-text);
+}
+
+.next-due {
+  margin-top: 4px;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  color: var(--onboard-main-text);
+  text-align: start;
+}
+
+.pay-now {
+  height: 50px;
+  margin: -15px -9px 0 0;
+}
+
+.mid-header {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 20px;
+  color: var(--order-header-grey);
+}
+.mid-value {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--background-green);
+}
+
+.mid-details .box {
+  width: 100px;
+}
+
+.per-month {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--order-card-title);
+}
+
+.end-container1 {
+  width: 100%;
+}
+
+.end-header {
+  width: 100px;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 25px;
+  color: var(--order-header-grey);
+}
+
+.end-value {
+  width: 50px;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 25px;
+  color: var(--order-card-title);
+}
+
+.end-dates {
+  width: 100px;
+}
+
+.end-date-header {
+  width: 60px;
 }
 
 @media screen and (max-width: 576px) {

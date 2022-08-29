@@ -3,7 +3,7 @@
   height: 85vh;
 }
 
-.card-title {
+.card-main-title {
   width: 220px;
   color: var(--background-green);
   font-weight: 400;

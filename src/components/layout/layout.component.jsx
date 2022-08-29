@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import GroupLogo from "../../assets/images/GrouplogoTop.svg";
+import CheckoutSummary from "../checkout-summary/checkout-summary.component";
 import "./layout.styles.css";
 
 const MobileCard = lazy(() => import("../mobile-card/mobile-card.component"));
@@ -30,6 +31,7 @@ const Layout = () => {
           <Route path="nameEmail" element={<NameEmailCard />} />
           <Route path="otp" element={<OtpCard />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="checkoutSummary" element={<CheckoutSummary />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </div>
