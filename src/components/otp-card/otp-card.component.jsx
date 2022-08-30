@@ -7,7 +7,7 @@ import Card from "../utils/card/card.component";
 import "./otp-card.styles.css";
 import { useNavigate } from "react-router-dom";
 
-const OtpCard = () => {
+const OtpCard = ({ handleTitle }) => {
   const navigate = useNavigate();
   const { fullName, mobileNumber, emailId, otp } = useContext(UserDataContext);
   const [otpObj, setOtpObj] = useState({});
@@ -48,6 +48,10 @@ const OtpCard = () => {
       });
     });
   }, []);
+
+  useEffect(() => {
+    handleTitle("");
+  });
 
   const handleChange = (event) => {
     event.preventDefault();

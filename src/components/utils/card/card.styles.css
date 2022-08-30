@@ -1,6 +1,11 @@
-.card {
+.card-main {
   width: 380px;
   height: 85vh;
+}
+
+.card-main .card-body {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .card-main-title {
@@ -21,4 +26,10 @@
   line-height: 20px;
   text-align: center;
   margin-top: 1vh;
+}
+
+@media screen and (max-width: 385px) {
+  .card-main {
+    width: 390px;
+  }
 }

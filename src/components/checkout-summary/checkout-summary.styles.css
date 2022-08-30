@@ -1,0 +1,14 @@
+.checkout-container {
+  margin-top: 30px;
+}
+
+.summary-container {
+  row-gap: 15px;
+}
+
+.kyc-text {
+  font-weight: 350;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--white-header);
+}

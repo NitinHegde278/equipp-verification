@@ -3,13 +3,17 @@ import { ReactComponent as MobileArt } from "../../assets/images/mobileArt.svg";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Card from "../utils/card/card.component";
 import "./mobile-card.styles.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserDataContext } from "../../contexts/user-data.context";
 import { useNavigate } from "react-router-dom";
 
-const MobileCard = () => {
+const MobileCard = ({ handleTitle }) => {
   const navigate = useNavigate();
   const { mobileNumber, changeInput } = useContext(UserDataContext);
+
+  useEffect(() => {
+    handleTitle("");
+  });
 
   const handleChange = (event) => {
     event.preventDefault();

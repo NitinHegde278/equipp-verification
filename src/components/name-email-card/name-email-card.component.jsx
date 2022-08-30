@@ -3,13 +3,17 @@ import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Card from "../utils/card/card.component";
 import "./name-email-card.styles.css";
 import Button from "../utils/button/button.component";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../contexts/user-data.context";
 
-const NameEmailCard = () => {
+const NameEmailCard = ({ handleTitle }) => {
   const navigate = useNavigate();
   const { fullName, emailId, changeInput } = useContext(UserDataContext);
+
+  useEffect(() => {
+    handleTitle("STUDENT");
+  });
 
   const handleChange = (event) => {
     event.preventDefault();

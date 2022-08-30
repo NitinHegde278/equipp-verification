@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import NoOrderCard from "../no-order-card/no-order-card.component";
 import Card from "../utils/card/card.component";
 import OrderCard from "../utils/order-card/order-card.component";
@@ -32,19 +33,21 @@ const ORDERS = [
   },
 ];
 
-const Orders = () => {
+const Orders = ({ handleTitle }) => {
+  useEffect(() => {
+    handleTitle("");
+  });
+
   return (
     <>
       {ORDERS.length ? (
-        <div>
-          <Card title="Your Orders">
-            <div className="orders-container container">
-              {ORDERS.map((order) => {
-                return <OrderCard order={order} key={order.productId} />;
-              })}
-            </div>
-          </Card>
-        </div>
+        <Card title="Your Orders">
+          <div className="orders-container container">
+            {ORDERS.map((order) => {
+              return <OrderCard order={order} key={order.productId} />;
+            })}
+          </div>
+        </Card>
       ) : (
         <NoOrderCard />
       )}

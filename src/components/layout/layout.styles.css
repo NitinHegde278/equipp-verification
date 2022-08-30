@@ -1,15 +1,35 @@
+.layout-container {
+  padding: 0;
+}
+
+.header-container {
+  column-gap: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--white-header);
+}
+.header-background {
+  background-color: var(--onboard-green);
+}
 .side-logo {
   width: 40px;
-  margin: 3vh 0 0 15vh;
+  margin: 12px 0 12px 15vh;
   cursor: pointer;
 }
 
+.layout-card {
+  padding: 0;
+}
+
 @media screen and (max-width: 860px) {
-  .layout-card {
-    margin-left: 3vw;
+  .header-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
   }
 
   .side-logo {
-    margin: 1vh auto;
+    margin-left: 0;
   }
 }
