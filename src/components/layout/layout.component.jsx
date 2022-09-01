@@ -1,7 +1,6 @@
 import { lazy, useCallback, useState } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import GroupLogo from "../../assets/images/GrouplogoTop.svg";
-import CheckoutSummary from "../checkout-summary/checkout-summary.component";
 import "./layout.styles.css";
 
 const MobileCard = lazy(() => import("../mobile-card/mobile-card.component"));
@@ -11,6 +10,9 @@ const NameEmailCard = lazy(() =>
 const OtpCard = lazy(() => import("../otp-card/otp-card.component"));
 const NoPage = lazy(() => import("../no-page/no-page.component"));
 const Orders = lazy(() => import("../orders/orders.component"));
+const CheckoutSummary = lazy(() =>
+  import("../checkout-summary/checkout-summary.component")
+);
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -33,7 +35,7 @@ const Layout = () => {
           alt="Group logo"
           onClick={() => navigate("/")}
         />
-        {title && <div data-testid="title">{title}</div>}
+        {title && <div>{title}</div>}
       </div>
       <div className="d-flex flex-row justify-content-center layout-card">
         <Routes>

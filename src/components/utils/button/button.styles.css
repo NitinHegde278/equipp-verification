@@ -13,3 +13,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 860px) {
+  .smallWidth {
+    width: 180px;
+  }
+}

@@ -15,12 +15,14 @@ const Onboard = () => {
     navigate("/layout/mobile");
   };
 
+  const handleEventListener = () => {
+    setScreenSize(window.innerWidth);
+  };
+
   useEffect(() => {
-    window.addEventListener("resize", () => {
-      setScreenSize(window.innerWidth);
-    });
+    window.addEventListener("resize", handleEventListener);
     return () => {
-      window.removeEventListener("resize", () => {});
+      window.removeEventListener("resize", handleEventListener);
     };
   }, [screenSize]);
 
@@ -38,8 +40,8 @@ const Onboard = () => {
             style={{
               background: `linear-gradient(263.44deg, #C76537 0.13%, #EF9571 30.69%, #BC5137 62.42%, #F6996B 117.66%)`,
               color: `#FFFFFF`,
-              width: `${screenSize < 860 ? "180px" : "320px"}`,
             }}
+            page="onboard"
           >
             CONTINUE &nbsp;
             <img src={RightArrow} alt="arrow" />
