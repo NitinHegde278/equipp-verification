@@ -1,0 +1,28 @@
+export const ORDERS = [
+  {
+    productId: 1,
+    productName: "Asus VivoBook 15- QHD 240Hz RTX 3070 i5 quadcore",
+    paymentCycleDone: 2,
+    paymentCycleTotal: 3,
+    nextDue: "1660102588000",
+    monthlyRental: 902,
+    insurance: 100,
+    gst: 18,
+    productQuantity: 1,
+    startDate: "1659918056000",
+    endDate: "1667792188000",
+  },
+  {
+    productId: 2,
+    productName: "Dell Inspiron 15- QHD 240Hz RTX 3070 i5 quadcore",
+    paymentCycleDone: 3,
+    paymentCycleTotal: 6,
+    nextDue: "1661818856000",
+    monthlyRental: 9020,
+    insurance: 100,
+    gst: 18,
+    productQuantity: 1,
+    startDate: "1656560188000",
+    endDate: "1672457788000",
+  },
+];

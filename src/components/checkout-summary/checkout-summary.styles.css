@@ -7,8 +7,54 @@
 }
 
 .kyc-text {
+  width: 70%;
   font-weight: 350;
   font-size: 10px;
   line-height: 14px;
   color: var(--white-header);
+}
+
+.summary-title {
+  width: 21vw;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--background-green);
+}
+.summary-block {
+  width: 21vw;
+}
+
+.summary-content div {
+  padding-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--order-card-title);
+}
+
+.total-block {
+  width: 21vw;
+  font-weight: 600;
+  line-height: 20px;
+  border-top: 1px solid #d0d0d1;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.total-block .total {
+  font-size: 14px;
+  color: var(--card-subtitle);
+}
+
+.total-block .amount {
+  font-size: 18px;
+  color: var(--background-green);
+}
+
+.paying {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: var(--onboard-main-text);
 }
