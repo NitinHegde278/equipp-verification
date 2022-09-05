@@ -6,6 +6,7 @@ import Button from "../utils/button/button.component";
 import Card from "../utils/card/card.component";
 import "./otp-card.styles.css";
 import { useNavigate } from "react-router-dom";
+import { TEXT } from "../../utils/constants";
 
 const OtpCard = ({ handleTitle }) => {
   const navigate = useNavigate();
@@ -65,15 +66,15 @@ const OtpCard = ({ handleTitle }) => {
     if (otp === Object.values(otpObj).join("")) {
       navigate("/layout/orders");
     } else {
-      setOtpError("The OTP entered is wrong. Please try again");
+      setOtpError(TEXT.wrongOtp);
     }
   };
 
   return (
     <Card
-      title={"Hello!"}
+      title={TEXT.cardOtpTitle}
       subTitle={fullName}
-      subText={`Please enter the OTP sent to +91${maskedMobileNumber} & ${maskedEmailId}`}
+      subText={`${TEXT.cardOtpsubText} +91${maskedMobileNumber} & ${maskedEmailId}`}
       Image={OtpArt}
     >
       <form className="otp-form" onSubmit={handleSubmit}>
@@ -147,7 +148,7 @@ const OtpCard = ({ handleTitle }) => {
         </div>
 
         <div className="otp-resend">
-          I haven't recieved a code (0:{timer < 10 && 0}
+          {TEXT.cardOtpNotReceived} (0:{timer < 10 && 0}
           {timer})
         </div>
         <Button

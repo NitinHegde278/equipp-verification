@@ -1,0 +1,3 @@
+export const ORDERS_ACTION_TYPES = {
+  ADD_ORDERS: "ADD_ORDERS",
+};

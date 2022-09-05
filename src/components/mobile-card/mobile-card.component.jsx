@@ -6,6 +6,7 @@ import "./mobile-card.styles.css";
 import { useContext, useEffect } from "react";
 import { UserDataContext } from "../../contexts/user-data.context";
 import { useNavigate } from "react-router-dom";
+import { TEXT } from "../../utils/constants";
 
 const MobileCard = ({ handleTitle }) => {
   const navigate = useNavigate();
@@ -45,8 +46,8 @@ const MobileCard = ({ handleTitle }) => {
 
   return (
     <Card
-      title="Enter Mobile Number to login"
-      subText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      title={TEXT.cardMobileTitle}
+      subText={TEXT.cardSubtitle}
       Image={MobileArt}
     >
       <form className="mobile-form" onSubmit={handleSubmit}>

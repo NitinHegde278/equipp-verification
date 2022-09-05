@@ -2,23 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DownOrangeArrow from "../../../assets/icons/downOrangeArrow.svg";
 import LaptopPlaceholder from "../../../assets/images/LaptopPlaceholder2.png";
+import { MONTH, TEXT } from "../../../utils/constants";
 import Button from "../button/button.component";
 import "./order-card.styles.css";
-
-const MONTH = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 const OrderCard = ({ order }) => {
   const [show, setShow] = useState(false);
@@ -38,7 +24,7 @@ const OrderCard = ({ order }) => {
 
   return (
     <div className="container card-container">
-      <div className="card-group row">
+      <div className="card-group order-card row">
         <div
           className={`card d-flex justify-content-center image-container ${
             !show && "border-style"
@@ -51,22 +37,22 @@ const OrderCard = ({ order }) => {
           />
         </div>
         <div className={`card main-container ${!show && "border-style"}`}>
-          <div className="card-title title">{order?.productName}</div>
+          <div className="card-title order-title">{order?.productName}</div>
           <div className="card-body">
             <div className="payment-cycle">
-              Payment Cycle &nbsp;
+              {TEXT.orderCardPaymentCycle}{" "}
               <div className="d-inline content">
                 {order?.paymentCycleDone}/{order?.paymentCycleTotal}
               </div>
             </div>
             <div className="next-due">
-              Next Due on {dueDate.getDate() < 10 && "0"}
+              {TEXT.orderCardNextDue} {dueDate.getDate() < 10 && "0"}
               {dueDate.getDate()} {MONTH[dueDate.getMonth()]}
             </div>
           </div>
           <div className="card-footer d-flex justify-content-between order-footer">
             <div className="show" onClick={handleShow}>
-              {show ? "Show Less" : "Show More"} &nbsp;
+              {show ? "Show Less" : "Show More"}{" "}
               <img
                 src={DownOrangeArrow}
                 className={show ? "show-less" : "show-more"}
@@ -99,14 +85,14 @@ const OrderCard = ({ order }) => {
       >
         <div className="mid-container">
           <div className="d-flex flex-row justify-content-between text-start mid-header">
-            <div className="box">Price</div>
-            <div className="box">Qty.</div>
-            <div className="box">Rental Period</div>
+            <div className="box">{TEXT.orderCardPrice}</div>
+            <div className="box">{TEXT.orderCardQty}</div>
+            <div className="box">{TEXT.orderCardRentalPeriod}</div>
           </div>
           <div className="d-flex flex-row justify-content-between text-start mid-value">
             <div className="box">
               Rs. {order?.monthlyRental + order?.insurance + order?.gst}
-              <div className="per-month">per month</div>
+              <div className="per-month">{TEXT.orderCardPerMonth}</div>
             </div>
             <div className="box">{order?.productQuantity} Unit</div>
             <div className="box">{order?.paymentCycleTotal} Months</div>
@@ -121,9 +107,9 @@ const OrderCard = ({ order }) => {
         <div className="end-container d-flex flex-row">
           <div className="end-container1 d-flex flex-row text-start">
             <div className="end-header">
-              <div>Monthly Rental</div>
-              <div>Insurance</div>
-              <div>GST</div>
+              <div>{TEXT.orderCardMonthly}</div>
+              <div>{TEXT.orderCardInsurance}</div>
+              <div>{TEXT.orderCardGST}</div>
             </div>
             <div className="end-value">
               <div> ₹ {order?.monthlyRental}</div>
@@ -133,9 +119,9 @@ const OrderCard = ({ order }) => {
           </div>
           <div className="end-container2 d-flex flex-row">
             <div className="end-header end-date-header text-start">
-              <div>Start Date</div>
-              <div>End Date</div>
-              <div>Billing Date</div>
+              <div>{TEXT.orderCardStartDate}</div>
+              <div>{TEXT.orderCardEndDate}</div>
+              <div>{TEXT.orderCardBillingDate}</div>
             </div>
             <div className="end-value end-dates text-end">
               <div>

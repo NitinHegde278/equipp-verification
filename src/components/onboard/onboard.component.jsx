@@ -6,6 +6,7 @@ import RightArrow from "../../assets/icons/rightArrow.svg";
 import { ReactComponent as ArtBoard } from "../../assets/images/Artboard.svg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { TEXT } from "../../utils/constants";
 
 const Onboard = () => {
   const navigate = useNavigate();
@@ -31,9 +32,7 @@ const Onboard = () => {
       <div className="left-panel col-12 col-sm-5 col-md-5 col-lg-5 d-flex flex-column align-items-center">
         <img className="group-logo" src={GroupLogo} alt="Group Logo" />
         <img className="main-logo" src={MainLogo} alt="Equipp logo" />
-        <span className="sub-content">
-          If you are part of our beta version,click below to start your journey
-        </span>
+        <span className="sub-content">{TEXT.onboardSubContent}</span>
         <span className="button-continue">
           <Button
             clickEvent={handleClick}
@@ -60,12 +59,9 @@ const Onboard = () => {
             }
           />
         </div>
-        <div className="main-content">
-          Get tech when you want, As long as you want
-        </div>
+        <div className="main-content">{TEXT.onboardMainContent}</div>
         <div className="bottom-text">
-          Are you a Freelancer? Startup? Gamer? <br />
-          We have something for all your requirements
+          {TEXT.onboardBottomText1} <br /> {TEXT.onboardBottomText2}
         </div>
       </div>
     </div>

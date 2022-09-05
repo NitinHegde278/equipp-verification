@@ -2,14 +2,16 @@ import Card from "../utils/card/card.component";
 import { ReactComponent as NoOrderArt } from "../../assets/images/noOrderArt.svg";
 import "./no-order-card.styles.css";
 import Button from "../utils/button/button.component";
+import { TEXT } from "../../utils/constants";
 
 const NoOrderCard = () => {
   return (
     <Card Image={NoOrderArt}>
-      <div className="main-text">You have not placed any order with us.</div>
+      <div className="main-text">{TEXT.cardNoOrderTitle}</div>
       <div className="sub-text">
-        Reach out to <div className="mobile d-inline">+91-987654321</div> to
-        check our inventory
+        {TEXT.cardNoOrderSubtitle1}{" "}
+        <div className="mobile d-inline">{TEXT.cardNoOrderMobile}</div>{" "}
+        {TEXT.cardNoOrderSubtitle2}
       </div>
       <Button
         style={{

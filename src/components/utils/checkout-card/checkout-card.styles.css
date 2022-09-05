@@ -1,0 +1,76 @@
+.checkout-card-container {
+  width: 93%;
+  margin-top: 18px;
+}
+
+.checkout-card .image-box,
+.checkout-card .detail-box {
+  height: 160px;
+}
+
+.image-box {
+  flex-grow: 0.5 !important;
+  margin-bottom: 0 !important;
+}
+
+.detail-box {
+  padding: 0;
+}
+
+.checkout-title {
+  width: 260px;
+  padding-left: 15px;
+  padding-top: 15px;
+  text-align: start;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 19px;
+  color: var(--order-card-title);
+}
+
+.detail-box .close {
+  position: absolute;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 0;
+  margin-top: -7px;
+  font-weight: 200;
+  font-size: 40px;
+  color: var(--order-header-grey);
+}
+
+.detail-box .amount {
+  padding: 5px 0 0 15px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--background-green);
+}
+
+.installment {
+  padding: 0 0 15px 15px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--order-card-title);
+}
+
+.installment .content {
+  font-weight: 600;
+  color: var(--onboard-main-text);
+}
+
+.checkout-card .card-footer {
+  height: 40px;
+  background: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--order-card-title);
+}
+
+.checkout-card .card-footer .content {
+  color: var(--onboard-main-text);
+}

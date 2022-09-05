@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import { createAction } from "../components/utils/create-action.utils";
+import { createAction } from "../utils/create-action.utils";
 import { USER_ACTION_TYPES } from "../reducers/user-data.actionTypes";
 import {
   userDataReducer,
@@ -15,10 +15,7 @@ export const UserDataContext = createContext({
 });
 
 export const UserDataProvider = ({ children }) => {
-  const [{ mobileNumber, fullName, emailId, otp }, dispatch] = useReducer(
-    userDataReducer,
-    USER_INITIAL_STATE
-  );
+  const [state, dispatch] = useReducer(userDataReducer, USER_INITIAL_STATE);
 
   const changeInput = (name, value) => {
     dispatch(
@@ -30,10 +27,7 @@ export const UserDataProvider = ({ children }) => {
   };
 
   const value = {
-    mobileNumber,
-    fullName,
-    emailId,
-    otp,
+    ...state,
     changeInput,
   };
 

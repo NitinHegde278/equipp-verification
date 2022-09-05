@@ -6,6 +6,7 @@ import Button from "../utils/button/button.component";
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserDataContext } from "../../contexts/user-data.context";
+import { TEXT } from "../../utils/constants";
 
 const NameEmailCard = ({ handleTitle }) => {
   const navigate = useNavigate();
@@ -33,8 +34,8 @@ const NameEmailCard = ({ handleTitle }) => {
 
   return (
     <Card
-      title="Enter Name & Email Id"
-      subText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      title={TEXT.cardEmailTitle}
+      subText={TEXT.cardSubtitle}
       Image={NameEmailArt}
     >
       <form className="name-email-form" onSubmit={handleSubmit}>
