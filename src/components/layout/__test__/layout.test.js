@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { OrdersContext } from "../../../contexts/orders.context";
+import { ORDERS } from "../../../utils/constants";
 import Layout from "../layout.component";
 
 describe("Layout Component", () => {
@@ -52,12 +54,25 @@ describe("Layout Component", () => {
 
   test("Render orders component", async () => {
     render(
-      <MemoryRouter initialEntries={["/orders"]}>
+      <OrdersContext.Provider value={ORDERS}>
+        <MemoryRouter initialEntries={["/orders"]}>
+          <Layout />
+        </MemoryRouter>
+      </OrdersContext.Provider>
+    );
+
+    const titleElement = await screen.findByText(/Your Orders/i);
+    expect(titleElement).toBeInTheDocument();
+  });
+
+  test("Render checkout-address component", async () => {
+    render(
+      <MemoryRouter initialEntries={["/checkoutAddress"]}>
         <Layout />
       </MemoryRouter>
     );
 
-    const titleElement = await screen.findByText(/Your Orders/i);
+    const titleElement = await screen.findByText(/Choose Address/i);
     expect(titleElement).toBeInTheDocument();
   });
 

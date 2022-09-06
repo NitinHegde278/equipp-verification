@@ -13,6 +13,12 @@ const Orders = lazy(() => import("../orders/orders.component"));
 const CheckoutSummary = lazy(() =>
   import("../checkout-summary/checkout-summary.component")
 );
+const CheckoutAddress = lazy(() =>
+  import("../checkout-address/checkout-address.component")
+);
+const VerificationAnchor = lazy(() =>
+  import("../verification-anchor/verification-anchor.component")
+);
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -53,6 +59,14 @@ const Layout = () => {
           <Route
             path="checkoutSummary"
             element={<CheckoutSummary handleTitle={handleTitle} />}
+          />
+          <Route
+            path="checkoutAddress"
+            element={<CheckoutAddress handleTitle={handleTitle} />}
+          />
+          <Route
+            path="verificationAnchor/*"
+            element={<VerificationAnchor handleTitle={handleTitle} />}
           />
           <Route path="*" element={<NoPage />} />
         </Routes>

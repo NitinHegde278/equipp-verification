@@ -25,6 +25,32 @@ export const ORDERS = [
     startDate: "1656560188000",
     endDate: "1672457788000",
   },
+  {
+    productId: 3,
+    productName: "Dell Inspiron 15- QHD 240Hz RTX 3070 i5 quadcore",
+    paymentCycleDone: 1,
+    paymentCycleTotal: 3,
+    nextDue: "1662077149000",
+    monthlyRental: 9020,
+    insurance: 100,
+    gst: 18,
+    productQuantity: 1,
+    startDate: "1656560188000",
+    endDate: "1672457788000",
+  },
+  {
+    productId: 4,
+    productName: "Dell Inspiron 15- QHD 240Hz RTX 3070 i5 quadcore",
+    paymentCycleDone: 0,
+    paymentCycleTotal: 6,
+    nextDue: "1661818856000",
+    monthlyRental: 9020,
+    insurance: 100,
+    gst: 18,
+    productQuantity: 1,
+    startDate: "1656560188000",
+    endDate: "1672457788000",
+  },
 ];
 
 export const TEXT = {
@@ -38,6 +64,9 @@ export const TEXT = {
   checkoutCardInstallment1: "Paying your",
   checkoutCardInstallment2: "installment",
   checkoutCardCycle: "Payment Cycle",
+  checkoutAddressTitle: "Choose Address",
+  checkoutAddressInfo:
+    "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
   cardSubtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   cardMobileTitle: "Enter Mobile Number to login",
   cardEmailTitle: "Enter Name & Email Id",
@@ -66,6 +95,15 @@ export const TEXT = {
   onboardMainContent: "Get tech when you want, As long as you want",
   onboardBottomText1: "Are you a Freelancer? Startup? Gamer?",
   onboardBottomText2: "We have something for all your requirements",
+  verificationCardTitle: "Verification",
+  verificationCardPan: "Enter PAN details",
+  verificationCardSelfie: "Take a Selfie",
+  verificationCardBank: "Enter Bank details",
+  verificationCardFooter: "One step closer to equipp",
+  verificationCardProfession: "Choose Profession",
+  verificationCardPanGST: "Enter Co. PAN and GST Details",
+  verificationCardCoBank: "Enter Co. Bank details",
+  verificationCardDIN: "Enter DIN Details",
   wrongOtp: "The OTP entered is wrong. Please try again",
 };
 

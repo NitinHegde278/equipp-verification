@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "../utils/button/button.component";
 import InfoIcon from "../../assets/icons/infoIcon.svg";
 import "./checkout-summary.styles.css";
@@ -7,11 +7,16 @@ import CheckoutCard from "../utils/checkout-card/checkout-card.component";
 import { TEXT } from "../../utils/constants";
 
 const CheckoutSummary = ({ handleTitle }) => {
+  const navigate = useNavigate();
   const { state } = useLocation();
 
   useEffect(() => {
     handleTitle("CHECKOUT");
   }, [state, handleTitle]);
+
+  const handleContinue = () => {
+    navigate("checkoutAddress", { state: state });
+  };
 
   return (
     <div className="container row checkout-container">
@@ -55,6 +60,7 @@ const CheckoutSummary = ({ handleTitle }) => {
             color: `#FFFFFF`,
             width: `65%`,
           }}
+          clickEvent={handleContinue}
         >
           CONTINUE
         </Button>

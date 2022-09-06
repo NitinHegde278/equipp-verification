@@ -23,4 +23,7 @@ code {
   --order-card-title: #3e3e3e;
   --order-header-grey: #999999;
   --white-header: #ffffff;
+  --border-grey: #d0d0d1;
+  --verification-card-text: #1c1c1c;
+  --verification-footer-orange: #d35929;
 }
