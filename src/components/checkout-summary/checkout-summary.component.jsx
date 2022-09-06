@@ -15,7 +15,7 @@ const CheckoutSummary = ({ handleTitle }) => {
   }, [state, handleTitle]);
 
   const handleContinue = () => {
-    navigate("checkoutAddress", { state: state });
+    navigate("/layout/checkoutAddress", { state: state });
   };
 
   return (
