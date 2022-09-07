@@ -104,6 +104,13 @@ export const TEXT = {
   verificationCardPanGST: "Enter Co. PAN and GST Details",
   verificationCardCoBank: "Enter Co. Bank details",
   verificationCardDIN: "Enter DIN Details",
+  panDetailsTitle: "Enter PAN & Mobile Number",
+  panDetailsSubtitle: "Don't have a PAN Card? Upload Guardian Details",
+  panDetailsFileText: "Files have to be in .PDF/ jpeg/ png format",
+  panDetailsFileInput: "Choose from Files",
+  selfieTitle: "Take a Selfie",
+  selfieSubtext:
+    "Make sure we can see your full face clearly no hats, glasses or anything that obstructs your face",
   wrongOtp: "The OTP entered is wrong. Please try again",
 };
 

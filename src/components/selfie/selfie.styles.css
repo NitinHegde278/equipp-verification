@@ -1,0 +1,23 @@
+#selfie-video {
+  width: 220px;
+  height: 220px;
+  border: 1.5px solid var(--onboard-main-text);
+  border-radius: 12px;
+}
+
+#selfie-canvas {
+  border: 1.5px solid var(--onboard-main-text);
+  border-radius: 12px;
+}
+
+.camera-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  width: 70%;
+  text-align: center;
+  color: var(--card-subtitle);
+}
+.hidden {
+  display: none;
+}

@@ -1,16 +1,26 @@
-import { useNavigate, useParams } from "react-router";
+import { useLocation, useNavigate, useParams } from "react-router";
 import { ReactComponent as VerificationFirst } from "../../assets/images/VerificationFirst.svg";
 import { TEXT } from "../../utils/constants";
 import Button from "../utils/button/button.component";
 import Card from "../utils/card/card.component";
+import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
+import GreenDone from "../../assets/icons/greenDone.svg";
+import OrangeFail from "../../assets/icons/orangeFail.svg";
 import "./verification-card.styles.css";
+import { useContext } from "react";
+import { VerificationContext } from "../../contexts/verification.context";
 
 const VerificationCard = () => {
   const navigate = useNavigate();
   const { type } = useParams();
+  const { panStatus, selfieStatus } = useContext(VerificationContext);
 
   const handleNavigation = () => {
-    navigate("panDetails");
+    if (panStatus === "pending") {
+      navigate("panDetails");
+    } else if (selfieStatus === "pending") {
+      navigate("selfie");
+    }
   };
 
   return (
@@ -25,13 +35,29 @@ const VerificationCard = () => {
         {type !== "pvtLlpPublic" && (
           <div className="box pan-details">
             <div className="content">{TEXT.verificationCardPan}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {panStatus === "pending" ? (
+                "Pending"
+              ) : panStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {type !== "pvtLlpPublic" && (
           <div className="box take-selfie">
             <div className="content">{TEXT.verificationCardSelfie}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {selfieStatus === "pending" ? (
+                "Pending"
+              ) : selfieStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {(type === "workingProfessional" || type === "student") && (
@@ -68,7 +94,8 @@ const VerificationCard = () => {
           background: `#FFFFFF`,
         }}
       >
-        CONTINUE
+        CONTINUE &nbsp;
+        <img src={GreenRightArrow} alt="arrow" />
       </Button>
       <div className="verification-footer">{TEXT.verificationCardFooter}</div>
     </Card>

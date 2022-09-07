@@ -4,6 +4,7 @@ import Button from "../utils/button/button.component";
 import InfoIcon from "../../assets/icons/infoIcon.svg";
 import "./checkout-summary.styles.css";
 import CheckoutCard from "../utils/checkout-card/checkout-card.component";
+import RightArrow from "../../assets/icons/rightArrow.svg";
 import { TEXT } from "../../utils/constants";
 
 const CheckoutSummary = ({ handleTitle }) => {
@@ -62,7 +63,8 @@ const CheckoutSummary = ({ handleTitle }) => {
           }}
           clickEvent={handleContinue}
         >
-          CONTINUE
+          CONTINUE &nbsp;
+          <img src={RightArrow} alt="arrow" />
         </Button>
       </div>
     </div>

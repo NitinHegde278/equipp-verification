@@ -3,6 +3,7 @@ import { TEXT } from "../../utils/constants";
 import Card from "../utils/card/card.component";
 import { ReactComponent as ChooseAddressArt } from "../../assets/images/ChooseAddressArt.svg";
 import LocationIcon from "../../assets/icons/locationIcon.svg";
+import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import "./checkout-address.styles.css";
 import Button from "../utils/button/button.component";
 
@@ -26,7 +27,8 @@ const CheckoutAddress = ({ handleTitle }) => {
           background: `#FFFFFF`,
         }}
       >
-        CONTINUE
+        CONTINUE &nbsp;
+        <img src={GreenRightArrow} alt="arrow" />
       </Button>
     </Card>
   );

@@ -4,6 +4,7 @@ import { Route, Routes, useParams } from "react-router";
 import PanDetails from "../pan-details/pan-details.component";
 import VerificationCard from "../verification-card/verification-card.component";
 import NoPage from "../no-page/no-page.component";
+import Selfie from "../selfie/selfie.component";
 
 const VerificationAnchor = ({ handleTitle }) => {
   const { "*": param } = useParams();
@@ -33,6 +34,7 @@ const VerificationAnchor = ({ handleTitle }) => {
     <Routes>
       <Route index path="/:type" element={<VerificationCard />} />
       <Route path=":type/panDetails" element={<PanDetails />} />
+      <Route path=":type/selfie" element={<Selfie />} />
       <Route path="*" element={<NoPage />} />
     </Routes>
   );
