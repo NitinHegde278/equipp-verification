@@ -52,9 +52,6 @@ const Selfie = () => {
   };
 
   useEffect(() => {
-    // eslint-disable-next-line
-    changeInput("selfieImage", "");
-
     const video = document.getElementById("selfie-video");
     const constraints = {
       video: {
