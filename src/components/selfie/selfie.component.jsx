@@ -24,9 +24,9 @@ const Selfie = () => {
     }
     navigate(`/layout/verificationAnchor/${type}`);
   };
+
   const handleCapture = () => {
     setButton(!button);
-
     if (button) {
       const canvas = document.getElementById("selfie-canvas");
       canvas.width = 220;
@@ -52,7 +52,9 @@ const Selfie = () => {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line
     changeInput("selfieImage", "");
+
     const video = document.getElementById("selfie-video");
     const constraints = {
       video: {

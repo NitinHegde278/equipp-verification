@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { ReactComponent as VerificationFirst } from "../../assets/images/VerificationFirst.svg";
 import { TEXT } from "../../utils/constants";
 import Button from "../utils/button/button.component";
