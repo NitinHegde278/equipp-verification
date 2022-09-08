@@ -1,6 +1,14 @@
 import "./card.styles.css";
 
-const Card = ({ title, subTitle, subText, Image, style, children }) => {
+const Card = ({
+  title,
+  subTitle,
+  subText,
+  bankDate,
+  Image,
+  style,
+  children,
+}) => {
   return (
     <div
       className="card card-main d-flex flex-column align-items-center"
@@ -11,7 +19,12 @@ const Card = ({ title, subTitle, subText, Image, style, children }) => {
           {title} <br /> {subTitle && <div>{subTitle}</div>}
         </div>
       )}
-      {subText && <div className="card-subtitle">{subText}</div>}
+      {subText && (
+        <div className="card-subtitle">
+          {subText}
+          {bankDate && <div className="bank-date">{bankDate}</div>}
+        </div>
+      )}
 
       <div className="card-body d-flex flex-column align-items-center">
         {Image && <Image />}

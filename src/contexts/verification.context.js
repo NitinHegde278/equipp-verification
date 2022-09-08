@@ -12,6 +12,11 @@ export const VerificationContext = createContext({
   panStatus: "pending",
   selfieImage: "",
   selfieStatus: "pending",
+  bankFile: new File([], ""),
+  bankStatementStatus: "pending",
+  bankStatementPwd: 1,
+  bankStatementTerms: false,
+  verifyPassword: "",
   changeInput: () => {},
 });
 

@@ -108,6 +108,12 @@ export const TEXT = {
   panDetailsSubtitle: "Don't have a PAN Card? Upload Guardian Details",
   panDetailsFileText: "Files have to be in .PDF/ jpeg/ png format",
   panDetailsFileInput: "Choose from Files",
+  bankStatementTitle: "Upload your Bank Statement",
+  bankStatementSubtitle: "Please upload 6 months bank statement from",
+  bankStatementPwdProtected: "Is it password protected?",
+  bankStatementFileText: "Files have to be in .PDF format only",
+  bankStatementTerms: "I accept all Terms and Conditions",
+  verifyBankTitle: "Verify document password",
   selfieTitle: "Take a Selfie",
   selfieSubtext:
     "Make sure we can see your full face clearly no hats, glasses or anything that obstructs your face",

@@ -13,13 +13,16 @@ import { VerificationContext } from "../../contexts/verification.context";
 const VerificationCard = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { panStatus, selfieStatus } = useContext(VerificationContext);
+  const { panStatus, selfieStatus, bankStatementStatus } =
+    useContext(VerificationContext);
 
   const handleNavigation = () => {
     if (panStatus === "pending") {
       navigate("panDetails");
     } else if (selfieStatus === "pending") {
       navigate("selfie");
+    } else if (bankStatementStatus === "pending") {
+      navigate("bankStatement");
     }
   };
 
@@ -63,7 +66,15 @@ const VerificationCard = () => {
         {(type === "workingProfessional" || type === "student") && (
           <div className="box bank-details">
             <div className="content">{TEXT.verificationCardBank}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {bankStatementStatus === "pending" ? (
+                "Pending"
+              ) : bankStatementStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {type === "workingProfessional" && (

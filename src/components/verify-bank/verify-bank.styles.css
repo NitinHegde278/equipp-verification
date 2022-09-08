@@ -1,0 +1,15 @@
+.verify-bank-form {
+  width: 320px;
+  margin-bottom: 15px;
+}
+
+.verify-bank-form #verifyPassword {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+.verify-bank-form #verifyPassword:focus {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}

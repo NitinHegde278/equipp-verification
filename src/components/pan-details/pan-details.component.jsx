@@ -26,7 +26,7 @@ const PanDetails = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (panMobileNumber.length === 10 && panFile.size > 1) {
+    if (panMobileNumber.length === 10 && panFile.size > 0) {
       changeInput("panStatus", "done");
     } else {
       changeInput("panStatus", "fail");

@@ -1,0 +1,101 @@
+.bank-details-form {
+  width: 320px;
+}
+
+.bank-details-form #bankFile {
+  height: 40px;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.custom-file-button input[type="file"] {
+  display: none;
+}
+
+.custom-file-button label:hover {
+  cursor: pointer;
+}
+.bank-box {
+  width: 100%;
+  height: 40px;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 14px;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.bank-box .text {
+  color: #666768;
+}
+.bank-box .bank-required {
+  color: var(--onboard-main-text);
+}
+
+.bank-box .bank-add {
+  font-size: 25px;
+  color: var(--onboard-main-text);
+}
+
+.bank-file-label {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: var(--verification-footer-orange);
+  margin: 10px 0;
+}
+
+.bank-details-form .pwd-protected {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--card-subtitle);
+}
+.bank-details-form .bank-box:active {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}
+.pwd-checkbox {
+  margin: 10px 0;
+}
+
+.pwd-checkbox .check {
+  display: flex;
+  width: 160px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.pwd-checkbox .check:hover {
+  cursor: pointer;
+}
+
+.pwd-checkbox .isActive {
+  border-color: var(--onboard-main-text);
+}
+
+.bank-details-form .terms {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  color: var(--verification-footer-orange);
+}
+.bank-details-form #bankStatementTerms {
+  height: 22px;
+}
+
+.bank-details-form #bankStatementTerms:checked {
+  background-color: var(--onboard-main-text);
+}
+
+.bank-details-form #bankStatementTerms:focus {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}

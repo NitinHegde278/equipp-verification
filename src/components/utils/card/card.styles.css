@@ -28,6 +28,13 @@
   margin-top: 1vh;
 }
 
+.card-subtitle .bank-date {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--onboard-main-text);
+}
+
 @media screen and (max-width: 385px) {
   .card-main {
     width: 390px;

@@ -6,6 +6,11 @@ export const VERIFICATION_INITIAL_STATE = {
   panStatus: "pending",
   selfieImage: "",
   selfieStatus: "pending",
+  bankFile: new File([], ""),
+  bankStatementStatus: "pending",
+  bankStatementPwd: 1,
+  bankStatementTerms: false,
+  verifyPassword: "",
 };
 
 export const verificationReducer = (state, action) => {
