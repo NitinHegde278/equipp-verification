@@ -118,6 +118,14 @@ export const TEXT = {
   selfieSubtext:
     "Make sure we can see your full face clearly no hats, glasses or anything that obstructs your face",
   wrongOtp: "The OTP entered is wrong. Please try again",
+  professionTitle: "Choose type",
+  professionSubtitle: "of profession",
+  workEmailTitle: "Work Email",
+  coPanGstTitle: "Enter Company PAN & GST",
+  partnerPanTitle: "Enter Partner",
+  partnerPanSubtitle: "PAN & Mobile Number",
+  partnerPanSubText: "Enter one of the Partners Details",
+  directorDinTitle: "Enter Director's DIN",
 };
 
 export const MONTH = [

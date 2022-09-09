@@ -15,8 +15,9 @@ const Card = ({
       style={{ ...style }}
     >
       {title && (
-        <div className="card-title card-main-title">
-          {title} <br /> {subTitle && <div>{subTitle}</div>}
+        <div className="card-title card-main-title d-flex flex-column align-items-center">
+          {title}
+          {subTitle && <div className="subtitle">{subTitle}</div>}
         </div>
       )}
       {subText && (

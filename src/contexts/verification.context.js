@@ -17,6 +17,12 @@ export const VerificationContext = createContext({
   bankStatementPwd: 1,
   bankStatementTerms: false,
   verifyPassword: "",
+  professionStatus: "pending",
+  professionSelect: 1,
+  workEmail: "",
+  coPanGstStatus: "pending",
+  coPan: "",
+  coGst: "",
   changeInput: () => {},
 });
 

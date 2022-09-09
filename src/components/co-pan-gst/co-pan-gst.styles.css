@@ -1,0 +1,14 @@
+.coPanGst-form {
+  margin-top: 30px;
+}
+.coPanGst-form #coPan {
+  margin-bottom: 15px;
+}
+.coPanGst-form #coGst {
+  margin-bottom: 30px;
+}
+.coPanGst-form .form-control:focus {
+  box-shadow: 0 0 0.1rem var(--onboard-main-text),
+    inset 0 0 0.1rem var(--onboard-main-text);
+  border-color: var(--onboard-main-text);
+}

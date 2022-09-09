@@ -6,8 +6,15 @@ import LocationIcon from "../../assets/icons/locationIcon.svg";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import "./checkout-address.styles.css";
 import Button from "../utils/button/button.component";
+import { useNavigate } from "react-router";
 
 const CheckoutAddress = ({ handleTitle }) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/layout/verificationAnchor/workingProfessional");
+  };
+
   useEffect(() => {
     handleTitle("");
   });
@@ -26,6 +33,7 @@ const CheckoutAddress = ({ handleTitle }) => {
           color: `#426572`,
           background: `#FFFFFF`,
         }}
+        clickEvent={handleNavigation}
       >
         CONTINUE &nbsp;
         <img src={GreenRightArrow} alt="arrow" />

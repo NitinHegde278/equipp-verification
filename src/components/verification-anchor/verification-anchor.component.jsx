@@ -7,6 +7,10 @@ import NoPage from "../no-page/no-page.component";
 import Selfie from "../selfie/selfie.component";
 import BankStatement from "../bank-statement/bank-statement.component";
 import VerifyBank from "../verify-bank/verify-bank.component";
+import Profession from "../profession/profession.component";
+import WorkEmail from "../work-email/work-email.component";
+import CoPanGst from "../co-pan-gst/co-pan-gst.component";
+import DirectorDin from "../director-din/director-din.component";
 
 const VerificationAnchor = ({ handleTitle }) => {
   const { "*": param } = useParams();
@@ -39,6 +43,10 @@ const VerificationAnchor = ({ handleTitle }) => {
       <Route path=":type/selfie" element={<Selfie />} />
       <Route path=":type/bankStatement" element={<BankStatement />} />
       <Route path=":type/verifyBank" element={<VerifyBank />} />
+      <Route path=":type/profession" element={<Profession />} />
+      <Route path=":type/workEmail" element={<WorkEmail />} />
+      <Route path=":type/coPanGst" element={<CoPanGst />} />
+      <Route path=":type/directorDin" element={<DirectorDin />} />
       <Route path="*" element={<NoPage />} />
     </Routes>
   );

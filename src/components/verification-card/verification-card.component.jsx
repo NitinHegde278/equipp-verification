@@ -13,16 +13,49 @@ import { VerificationContext } from "../../contexts/verification.context";
 const VerificationCard = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { panStatus, selfieStatus, bankStatementStatus } =
-    useContext(VerificationContext);
+  const {
+    panStatus,
+    selfieStatus,
+    bankStatementStatus,
+    professionStatus,
+    coPanGstStatus,
+  } = useContext(VerificationContext);
 
   const handleNavigation = () => {
-    if (panStatus === "pending") {
-      navigate("panDetails");
-    } else if (selfieStatus === "pending") {
-      navigate("selfie");
-    } else if (bankStatementStatus === "pending") {
-      navigate("bankStatement");
+    switch (type) {
+      case "student":
+        if (panStatus === "pending") {
+          navigate("panDetails");
+        } else if (selfieStatus === "pending") {
+          navigate("selfie");
+        } else if (bankStatementStatus === "pending") {
+          navigate("bankStatement");
+        }
+        break;
+      case "workingProfessional":
+        if (panStatus === "pending") {
+          navigate("panDetails");
+        } else if (selfieStatus === "pending") {
+          navigate("selfie");
+        } else if (bankStatementStatus === "pending") {
+          navigate("bankStatement");
+        } else if (professionStatus === "pending") {
+          navigate("profession");
+        }
+        break;
+      case "partnershipFirm":
+        if (coPanGstStatus === "pending") {
+          navigate("coPanGst");
+        } else if (panStatus === "pending") {
+          navigate("panDetails");
+        } else if (selfieStatus === "pending") {
+          navigate("selfie");
+        } else if (bankStatementStatus === "pending") {
+          navigate("bankStatement");
+        }
+        break;
+      default:
+        break;
     }
   };
 
@@ -32,7 +65,15 @@ const VerificationCard = () => {
         {(type === "pvtLlpPublic" || type === "partnershipFirm") && (
           <div className="box pan-gst">
             <div className="content">{TEXT.verificationCardPanGST}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {coPanGstStatus === "pending" ? (
+                "Pending"
+              ) : coPanGstStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {type !== "pvtLlpPublic" && (
@@ -80,7 +121,15 @@ const VerificationCard = () => {
         {type === "workingProfessional" && (
           <div className="box choose-profession">
             <div className="content">{TEXT.verificationCardProfession}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {professionStatus === "pending" ? (
+                "Pending"
+              ) : professionStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {type === "pvtLlpPublic" && (
@@ -92,7 +141,15 @@ const VerificationCard = () => {
         {(type === "pvtLlpPublic" || type === "partnershipFirm") && (
           <div className="box co-bank">
             <div className="content">{TEXT.verificationCardCoBank}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {bankStatementStatus === "pending" ? (
+                "Pending"
+              ) : bankStatementStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
       </div>

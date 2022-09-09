@@ -1,0 +1,21 @@
+.profession-check {
+  margin-bottom: 20px;
+}
+
+.profession-check .check {
+  display: flex;
+  width: 320px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.profession-check .check:hover {
+  cursor: pointer;
+}
+
+.profession-check .isActive {
+  border-color: var(--onboard-main-text);
+}

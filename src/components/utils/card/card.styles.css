@@ -18,6 +18,10 @@
   margin-top: 5vh;
 }
 
+.card-main-title .subtitle {
+  width: 300px;
+}
+
 .card-subtitle {
   width: 300px;
   color: var(--card-subtitle);

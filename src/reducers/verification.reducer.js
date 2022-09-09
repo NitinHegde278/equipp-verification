@@ -11,6 +11,12 @@ export const VERIFICATION_INITIAL_STATE = {
   bankStatementPwd: 1,
   bankStatementTerms: false,
   verifyPassword: "",
+  professionStatus: "pending",
+  professionSelect: 1,
+  workEmail: "",
+  coPanGstStatus: "pending",
+  coPan: "",
+  coGst: "",
 };
 
 export const verificationReducer = (state, action) => {

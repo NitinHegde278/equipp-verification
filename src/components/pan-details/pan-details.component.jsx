@@ -1,6 +1,7 @@
 import { TEXT } from "../../utils/constants";
 import Card from "../utils/card/card.component";
-import { ReactComponent as PANDetails } from "../../assets/images/PANDetails.svg";
+import { ReactComponent as PANDetailsSvg } from "../../assets/images/PANDetails.svg";
+import { ReactComponent as PartnerPanSvg } from "../../assets/images/PartnerPan.svg";
 import "./pan-details.styles.css";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Button from "../utils/button/button.component";
@@ -40,9 +41,16 @@ const PanDetails = () => {
 
   return (
     <Card
-      title={TEXT.panDetailsTitle}
-      subText={TEXT.panDetailsSubtitle}
-      Image={PANDetails}
+      title={
+        type === "partnershipFirm" ? TEXT.partnerPanTitle : TEXT.panDetailsTitle
+      }
+      subTitle={type === "partnershipFirm" && TEXT.partnerPanSubtitle}
+      subText={
+        type === "partnershipFirm"
+          ? TEXT.partnerPanSubText
+          : TEXT.panDetailsSubtitle
+      }
+      Image={type === "partnershipFirm" ? PartnerPanSvg : PANDetailsSvg}
     >
       <form className="pan-details-form" onSubmit={handleSubmit}>
         <div className="form-group custom-file-button d-flex align-items-center">
