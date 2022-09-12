@@ -10,10 +10,14 @@ import { TEXT } from "../../utils/constants";
 
 const NameEmailCard = ({ handleTitle }) => {
   const navigate = useNavigate();
-  const { fullName, emailId, changeInput } = useContext(UserDataContext);
+  const { fullName, emailId, mobileNumber, changeInput } =
+    useContext(UserDataContext);
 
   useEffect(() => {
     handleTitle("STUDENT");
+    if (mobileNumber.length === 0) {
+      navigate("/layout/mobile");
+    }
   });
 
   const handleChange = (event) => {

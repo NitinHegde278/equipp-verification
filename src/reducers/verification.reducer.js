@@ -1,6 +1,7 @@
 import { VERIFICATION_ACTION_TYPES } from "./verification.actionTypes";
 
 export const VERIFICATION_INITIAL_STATE = {
+  typeSelect: 1,
   panMobileNumber: "",
   panFile: new File([], ""),
   panStatus: "pending",
@@ -17,6 +18,9 @@ export const VERIFICATION_INITIAL_STATE = {
   coPanGstStatus: "pending",
   coPan: "",
   coGst: "",
+  dinStatus: "pending",
+  dinNumber: "",
+  employeeSelect: "select",
 };
 
 export const verificationReducer = (state, action) => {

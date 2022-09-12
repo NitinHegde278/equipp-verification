@@ -3,7 +3,7 @@ import Card from "../utils/card/card.component";
 import { ReactComponent as ProfessionSvg } from "../../assets/images/Profession.svg";
 import "./profession.styles.css";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import Button from "../utils/button/button.component";
 import { useNavigate, useParams } from "react-router";
@@ -11,10 +11,22 @@ import { useNavigate, useParams } from "react-router";
 const Profession = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { professionSelect, changeInput } = useContext(VerificationContext);
+  const { professionSelect, bankStatementTerms, bankFile, changeInput } =
+    useContext(VerificationContext);
+
+  useEffect(() => {
+    if (!bankStatementTerms && bankFile.size === 0) {
+      navigate(`/layout/verificationAnchor/${type}/panDetails`);
+    }
+  });
 
   const handleNavigation = () => {
-    navigate(`/layout/verificationAnchor/${type}/workEmail`);
+    if (professionSelect === 2) {
+      navigate(`/layout/verificationAnchor/${type}/workEmail`);
+    } else {
+      changeInput("professionStatus", "done");
+      navigate(`/layout/verificationAnchor/${type}`);
+    }
   };
 
   const handleChange = (event) => {

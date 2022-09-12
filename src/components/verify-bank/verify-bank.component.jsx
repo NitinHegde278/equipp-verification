@@ -2,7 +2,7 @@ import { TEXT } from "../../utils/constants";
 import Card from "../utils/card/card.component";
 import { ReactComponent as VerifyBankSvg } from "../../assets/images/VerifyBank.svg";
 import "./verify-bank.styles.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Button from "../utils/button/button.component";
@@ -11,9 +11,26 @@ import { useNavigate, useParams } from "react-router";
 const VerifyBank = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { verifyPassword, changeInput } = useContext(VerificationContext);
+  const { verifyPassword, bankStatementTerms, bankFile, changeInput } =
+    useContext(VerificationContext);
 
-  const handleSubmit = async (event) => {
+  useEffect(() => {
+    if (
+      (type === "pvtLlpPublic" || type === "partnershipFirm") &&
+      !bankStatementTerms &&
+      bankFile.size === 0
+    ) {
+      navigate(`/layout/verificationAnchor/${type}/coPanGst`);
+    } else if (
+      (type === "student" || type === "workingProfessional") &&
+      !bankStatementTerms &&
+      bankFile.size === 0
+    ) {
+      navigate(`/layout/verificationAnchor/${type}/panDetails`);
+    }
+  });
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (verifyPassword.length !== 0) {
       changeInput("bankStatementStatus", "done");

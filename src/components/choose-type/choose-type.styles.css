@@ -1,0 +1,40 @@
+.type-title {
+  width: 150px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  color: var(--choose-select-green);
+}
+
+.type-subtitle {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 15px;
+  color: var(--verification-footer-orange);
+}
+
+.choose-type .check {
+  display: flex;
+  width: 320px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+}
+
+.choose-type .check:hover {
+  cursor: pointer;
+}
+
+.choose-type .isActive {
+  border-color: var(--onboard-main-text);
+}
+
+.choose-type .professional-subtext {
+  margin-top: -15px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+  color: var(--otp-resend-text);
+}

@@ -12,7 +12,7 @@ const CheckoutAddress = ({ handleTitle }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
-    navigate("/layout/verificationAnchor/workingProfessional");
+    navigate("/layout/chooseType");
   };
 
   useEffect(() => {

@@ -19,6 +19,7 @@ const VerificationCard = () => {
     bankStatementStatus,
     professionStatus,
     coPanGstStatus,
+    dinStatus,
   } = useContext(VerificationContext);
 
   const handleNavigation = () => {
@@ -50,6 +51,15 @@ const VerificationCard = () => {
           navigate("panDetails");
         } else if (selfieStatus === "pending") {
           navigate("selfie");
+        } else if (bankStatementStatus === "pending") {
+          navigate("bankStatement");
+        }
+        break;
+      case "pvtLlpPublic":
+        if (coPanGstStatus === "pending") {
+          navigate("coPanGst");
+        } else if (dinStatus === "pending") {
+          navigate("directorDin");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
         }
@@ -135,7 +145,15 @@ const VerificationCard = () => {
         {type === "pvtLlpPublic" && (
           <div className="box din">
             <div className="content">{TEXT.verificationCardDIN}</div>
-            <div className="status">Pending</div>
+            <div className="status">
+              {dinStatus === "pending" ? (
+                "Pending"
+              ) : dinStatus === "done" ? (
+                <img src={GreenDone} alt="success" />
+              ) : (
+                <img src={OrangeFail} alt="fail" />
+              )}
+            </div>
           </div>
         )}
         {(type === "pvtLlpPublic" || type === "partnershipFirm") && (

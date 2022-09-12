@@ -52,6 +52,9 @@ const OtpCard = ({ handleTitle }) => {
 
   useEffect(() => {
     handleTitle("");
+    if (emailId.length === 0 || fullName.length === 0) {
+      navigate("/layout/mobile");
+    }
   });
 
   const handleChange = (event) => {
@@ -82,66 +85,54 @@ const OtpCard = ({ handleTitle }) => {
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
-              type="text"
+              type="number"
               onChange={handleChange}
-              minLength="1"
-              maxLength="1"
-              pattern="[0-9]"
+              max="9"
               required
             />
           </div>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import { ReactComponent as WorkEmailSvg } from "../../assets/images/workEmail.svg";
@@ -11,7 +11,14 @@ import "./work-email.styles.css";
 const WorkEmail = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { workEmail, changeInput } = useContext(VerificationContext);
+  const { workEmail, bankFile, bankStatementTerms, changeInput } =
+    useContext(VerificationContext);
+
+  useEffect(() => {
+    if (!bankStatementTerms && bankFile.size === 0) {
+      navigate(`/layout/verificationAnchor/${type}/panDetails`);
+    }
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();

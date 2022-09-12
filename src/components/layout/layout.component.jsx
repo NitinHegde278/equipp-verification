@@ -19,6 +19,7 @@ const CheckoutAddress = lazy(() =>
 const VerificationAnchor = lazy(() =>
   import("../verification-anchor/verification-anchor.component")
 );
+const ChooseType = lazy(() => import("../choose-type/choose-type.component"));
 
 const Layout = () => {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Layout = () => {
         />
         {title && <div>{title}</div>}
       </div>
-      <div className="d-flex flex-row justify-content-center layout-card">
+      <div className="d-flex flex-row justify-content-center align-items-center layout-card">
         <Routes>
           <Route
             index
@@ -63,6 +64,10 @@ const Layout = () => {
           <Route
             path="checkoutAddress"
             element={<CheckoutAddress handleTitle={handleTitle} />}
+          />
+          <Route
+            path="chooseType"
+            element={<ChooseType handleTitle={handleTitle} />}
           />
           <Route
             path="verificationAnchor/*"

@@ -5,15 +5,21 @@ import { ReactComponent as PartnerPanSvg } from "../../assets/images/PartnerPan.
 import "./pan-details.styles.css";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import Button from "../utils/button/button.component";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import { useNavigate, useParams } from "react-router";
 
 const PanDetails = () => {
   const context = useContext(VerificationContext);
-  const { changeInput, panMobileNumber, panFile } = context;
+  const { changeInput, panMobileNumber, coPanGstStatus, panFile } = context;
   const navigate = useNavigate();
   const { type } = useParams();
+
+  useEffect(() => {
+    if (type === "partnershipFirm" && coPanGstStatus === "pending") {
+      navigate(`/layout/verificationAnchor/${type}/coPanGst`);
+    }
+  });
 
   const handleChange = (event) => {
     event.preventDefault();

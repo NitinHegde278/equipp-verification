@@ -12,7 +12,8 @@ import { useNavigate, useParams } from "react-router";
 const Selfie = () => {
   const [capture, setCapture] = useState("");
   const [button, setButton] = useState(true);
-  const { selfieImage, changeInput } = useContext(VerificationContext);
+  const { selfieImage, panStatus, changeInput } =
+    useContext(VerificationContext);
   const navigate = useNavigate();
   const { type } = useParams();
 
@@ -52,6 +53,21 @@ const Selfie = () => {
   };
 
   useEffect(() => {
+    if (panStatus === "pending") {
+      setTimeout(() => {
+        const stream = capture.srcObject;
+        const tracks = stream.getTracks();
+
+        tracks.forEach((track) => {
+          track.stop();
+        });
+        navigate(`/layout/verificationAnchor/${type}/panDetails`);
+      }, 1500);
+    }
+  });
+
+  useEffect(() => {
+    changeInput("selfieImage", "");
     const video = document.getElementById("selfie-video");
     const constraints = {
       video: {
@@ -70,6 +86,8 @@ const Selfie = () => {
       }
     };
     startWebCam();
+
+    // eslint-disable-next-line
   }, [capture]);
 
   return (

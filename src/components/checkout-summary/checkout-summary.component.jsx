@@ -13,10 +13,13 @@ const CheckoutSummary = ({ handleTitle }) => {
 
   useEffect(() => {
     handleTitle("CHECKOUT");
-  }, [state, handleTitle]);
+    if (!state) {
+      navigate("/layout/orders");
+    }
+  });
 
   const handleContinue = () => {
-    navigate("/layout/checkoutAddress", { state: state });
+    navigate("/layout/checkoutAddress");
   };
 
   return (

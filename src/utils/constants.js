@@ -53,6 +53,13 @@ export const ORDERS = [
   },
 ];
 
+export const CHOOSE_TYPE = {
+  1: "student",
+  2: "workingProfessional",
+  3: "partnershipFirm",
+  4: "pvtLlpPublic",
+};
+
 export const TEXT = {
   checkoutSummaryTitle: "Order Summary",
   checkoutSummaryMonthly: "Monthly Rental",
@@ -67,6 +74,8 @@ export const TEXT = {
   checkoutAddressTitle: "Choose Address",
   checkoutAddressInfo:
     "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
+  chooseTypeTitle: "Lets get you verified",
+  chooseTypeSubtitle: "Choose which suits you best",
   cardSubtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   cardMobileTitle: "Enter Mobile Number to login",
   cardEmailTitle: "Enter Name & Email Id",

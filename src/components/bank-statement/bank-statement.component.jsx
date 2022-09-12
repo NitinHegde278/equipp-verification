@@ -4,15 +4,34 @@ import { ReactComponent as BankStatementSvg } from "../../assets/images/BankStat
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
 import "./bank-statement.styles.css";
 import Button from "../utils/button/button.component";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import { useNavigate, useParams } from "react-router";
 
 const BankStatement = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { bankFile, bankStatementTerms, bankStatementPwd, changeInput } =
-    useContext(VerificationContext);
+  const {
+    bankFile,
+    bankStatementTerms,
+    bankStatementPwd,
+    dinStatus,
+    selfieStatus,
+    changeInput,
+  } = useContext(VerificationContext);
+
+  useEffect(() => {
+    if (type === "pvtLlpPublic" && dinStatus === "pending") {
+      navigate(`/layout/verificationAnchor/${type}/coPanGst`);
+    } else if (
+      (type === "student" || type === "workingProfessional") &&
+      selfieStatus === "pending"
+    ) {
+      navigate(`/layout/verificationAnchor/${type}/panDetails`);
+    } else if (type === "partnershipFirm" && selfieStatus === "pending") {
+      navigate(`/layout/verificationAnchor/${type}/coPanGst`);
+    }
+  });
 
   const dateStringCreator = () => {
     const recentDate = new Date();
