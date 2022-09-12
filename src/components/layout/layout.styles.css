@@ -35,3 +35,10 @@
     margin-left: 0;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .layout-card {
+    align-items: flex-start !important;
+    margin-top: 20px;
+  }
+}
