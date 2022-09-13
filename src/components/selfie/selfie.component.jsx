@@ -21,9 +21,10 @@ const Selfie = () => {
     if (selfieImage.length) {
       changeInput("selfieStatus", "done");
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("selfieStatus", "fail");
     }
-    navigate(`/layout/verificationAnchor/${type}`);
+    navigate(`/layout/verificationAnchor/${type}/bankStatement`);
   };
 
   const handleCapture = () => {

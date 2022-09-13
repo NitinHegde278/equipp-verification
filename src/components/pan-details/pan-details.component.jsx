@@ -10,8 +10,8 @@ import { VerificationContext } from "../../contexts/verification.context";
 import { useNavigate, useParams } from "react-router";
 
 const PanDetails = () => {
-  const context = useContext(VerificationContext);
-  const { changeInput, panMobileNumber, coPanGstStatus, panFile } = context;
+  const { changeInput, panMobileNumber, coPanGstStatus, panFile } =
+    useContext(VerificationContext);
   const navigate = useNavigate();
   const { type } = useParams();
 
@@ -34,11 +34,13 @@ const PanDetails = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (panMobileNumber.length === 10 && panFile.size > 0) {
+      changeInput("verificationStatus", "process");
       changeInput("panStatus", "done");
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("panStatus", "fail");
     }
-    navigate(`/layout/verificationAnchor/${type}`);
+    navigate(`/layout/verificationAnchor/${type}/selfie`);
   };
 
   const handleFileUpload = () => {

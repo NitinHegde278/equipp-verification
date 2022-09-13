@@ -25,6 +25,7 @@ const Profession = () => {
       navigate(`/layout/verificationAnchor/${type}/workEmail`);
     } else {
       changeInput("professionStatus", "done");
+      changeInput("verificationStatus", "done");
       navigate(`/layout/verificationAnchor/${type}`);
     }
   };

@@ -24,6 +24,7 @@ const WorkEmail = () => {
     event.preventDefault();
     if (workEmail.length > 0) {
       changeInput("professionStatus", "done");
+      changeInput("verificationStatus", "done");
     } else {
       changeInput("professionalStatus", "fail");
     }

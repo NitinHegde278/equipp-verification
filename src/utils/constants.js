@@ -108,7 +108,10 @@ export const TEXT = {
   verificationCardPan: "Enter PAN details",
   verificationCardSelfie: "Take a Selfie",
   verificationCardBank: "Enter Bank details",
-  verificationCardFooter: "One step closer to equipp",
+  verificationCardFooter1: "One step closer to equipp",
+  verificationCardFooter2: "Check your email for a confirmation",
+  verificationCardFooter3:
+    "A team member will reach out to you for additional info.",
   verificationCardProfession: "Choose Profession",
   verificationCardPanGST: "Enter Co. PAN and GST Details",
   verificationCardCoBank: "Enter Co. Bank details",
@@ -135,6 +138,7 @@ export const TEXT = {
   partnerPanSubtitle: "PAN & Mobile Number",
   partnerPanSubText: "Enter one of the Partners Details",
   directorDinTitle: "Enter Director's DIN",
+  noPageTitle: "Error 404, page not found.",
 };
 
 export const MONTH = [

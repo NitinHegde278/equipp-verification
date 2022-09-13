@@ -33,8 +33,10 @@ const VerifyBank = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (verifyPassword.length !== 0) {
+      changeInput("verificationStatus", "done");
       changeInput("bankStatementStatus", "done");
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("bankStatementStatus", "fail");
     }
     navigate(`/layout/verificationAnchor/${type}`);

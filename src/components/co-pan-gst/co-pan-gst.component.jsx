@@ -22,10 +22,21 @@ const CoPanGst = () => {
     event.preventDefault();
     if (coPan.length > 0 && coGst.length > 0) {
       changeInput("coPanGstStatus", "done");
+      changeInput("verificationStatus", "process");
+      if (type === "pvtLlpPublic") {
+        navigate(`/layout/verificationAnchor/${type}/directorDin`);
+      } else {
+        navigate(`/layout/verificationAnchor/${type}/panDetails`);
+      }
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("coPanGstStatus", "fail");
+      if (type === "pvtLlpPublic") {
+        navigate(`/layout/verificationAnchor/${type}/directorDin`);
+      } else {
+        navigate(`/layout/verificationAnchor/${type}/panDetails`);
+      }
     }
-    navigate(`/layout/verificationAnchor/${type}`);
   };
 
   return (

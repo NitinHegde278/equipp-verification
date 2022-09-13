@@ -25,9 +25,10 @@ const DirectorDin = () => {
     if (dinNumber.length > 0) {
       changeInput("dinStatus", "done");
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("dinStatus", "fail");
     }
-    navigate(`/layout/verificationAnchor/${type}`);
+    navigate(`/layout/verificationAnchor/${type}/bankStatement`);
   };
 
   const handleChange = (event) => {
@@ -50,20 +51,17 @@ const DirectorDin = () => {
           />
         </div>
         <div className="form-group d-flex align-items-center">
-          <select
+          <input
             id="employeeSelect"
             name="employeeSelect"
-            className="form-control form-select"
+            className="form-control"
+            type="text"
+            placeholder="Select the number of employees *"
+            minLength="1"
+            pattern="[1-9][0-9]*"
             onChange={handleChange}
             required
-          >
-            <option value="select" selected disabled>
-              Select the number of employees *
-            </option>
-            <option value={1}>1-10</option>
-            <option value={2}>11-50</option>
-            <option value={3}>51-200</option>
-          </select>
+          />
         </div>
         <Button
           style={{

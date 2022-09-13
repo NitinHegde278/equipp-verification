@@ -7,6 +7,7 @@ import {
 import { createAction } from "../utils/create-action.utils";
 
 export const VerificationContext = createContext({
+  verificationStatus: "pending",
   typeSelect: 1,
   panMobileNumber: "",
   panFile: new File([], ""),
@@ -26,7 +27,7 @@ export const VerificationContext = createContext({
   coGst: "",
   dinStatus: "pending",
   dinNumber: "",
-  employeeSelect: "select",
+  employeeSelect: "",
   changeInput: () => {},
 });
 

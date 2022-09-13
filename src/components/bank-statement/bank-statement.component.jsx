@@ -1,4 +1,4 @@
-import { MONTH, TEXT } from "../../utils/constants";
+import { TEXT } from "../../utils/constants";
 import Card from "../utils/card/card.component";
 import { ReactComponent as BankStatementSvg } from "../../assets/images/BankStatement.svg";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
@@ -7,6 +7,7 @@ import Button from "../utils/button/button.component";
 import { useContext, useEffect } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import { useNavigate, useParams } from "react-router";
+import { dateStringCreator } from "../../utils/helper";
 
 const BankStatement = () => {
   const navigate = useNavigate();
@@ -33,26 +34,26 @@ const BankStatement = () => {
     }
   });
 
-  const dateStringCreator = () => {
-    const recentDate = new Date();
-    let olderDate = new Date();
-    olderDate.setMonth(olderDate.getMonth() - 6);
-
-    return `${MONTH[olderDate.getMonth()].slice(0, 3)}
-     ${String(olderDate.getFullYear()).slice(2, 4)} - ${MONTH[
-      recentDate.getMonth()
-    ].slice(0, 3)} ${String(recentDate.getFullYear()).slice(2, 4)}`;
-  };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (bankStatementTerms && bankFile.size > 0 && bankStatementPwd === 1) {
       navigate(`/layout/verificationAnchor/${type}/verifyBank`);
     } else if (bankStatementTerms && bankFile.size > 0) {
       changeInput("bankStatementStatus", "done");
-      navigate(`/layout/verificationAnchor/${type}`);
+      if (type !== "workingProfessional") {
+        changeInput("verificationStatus", "done");
+        navigate(`/layout/verificationAnchor/${type}`);
+      } else {
+        navigate(`/layout/verificationAnchor/${type}/profession`);
+      }
     } else {
+      changeInput("verificationStatus", "fail");
       changeInput("bankStatementStatus", "fail");
+      if (type !== "workingProfessional") {
+        navigate(`/layout/verificationAnchor/${type}`);
+      } else {
+        navigate(`/layout/verificationAnchor/${type}/profession`);
+      }
     }
   };
 

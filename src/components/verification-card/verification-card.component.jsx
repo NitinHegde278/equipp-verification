@@ -1,25 +1,29 @@
 import { useNavigate, useParams } from "react-router";
 import { ReactComponent as VerificationFirst } from "../../assets/images/VerificationFirst.svg";
+import { ReactComponent as VerificationInProcess } from "../../assets/images/VerificationInProcess.svg";
+import { ReactComponent as VerificationFailed } from "../../assets/images/VerificationFailed.svg";
+import { ReactComponent as VerificationSuccess } from "../../assets/images/VerificationSuccess.svg";
 import { TEXT } from "../../utils/constants";
 import Button from "../utils/button/button.component";
 import Card from "../utils/card/card.component";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
-import GreenDone from "../../assets/icons/greenDone.svg";
-import OrangeFail from "../../assets/icons/orangeFail.svg";
 import "./verification-card.styles.css";
 import { useContext } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
+import InputStatus from "../utils/input-status/input.status.component";
 
 const VerificationCard = () => {
   const navigate = useNavigate();
   const { type } = useParams();
   const {
+    verificationStatus,
     panStatus,
     selfieStatus,
     bankStatementStatus,
     professionStatus,
     coPanGstStatus,
     dinStatus,
+    changeInput,
   } = useContext(VerificationContext);
 
   const handleNavigation = () => {
@@ -31,6 +35,8 @@ const VerificationCard = () => {
           navigate("selfie");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
+        } else {
+          changeInput("verificationStatus", "done");
         }
         break;
       case "workingProfessional":
@@ -42,6 +48,8 @@ const VerificationCard = () => {
           navigate("bankStatement");
         } else if (professionStatus === "pending") {
           navigate("profession");
+        } else {
+          changeInput("verificationStatus", "done");
         }
         break;
       case "partnershipFirm":
@@ -53,6 +61,8 @@ const VerificationCard = () => {
           navigate("selfie");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
+        } else {
+          changeInput("verificationStatus", "done");
         }
         break;
       case "pvtLlpPublic":
@@ -62,6 +72,8 @@ const VerificationCard = () => {
           navigate("directorDin");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
+        } else {
+          changeInput("verificationStatus", "done");
         }
         break;
       default:
@@ -70,19 +82,24 @@ const VerificationCard = () => {
   };
 
   return (
-    <Card title={TEXT.verificationCardTitle} Image={VerificationFirst}>
+    <Card
+      title={TEXT.verificationCardTitle}
+      Image={
+        verificationStatus === "pending"
+          ? VerificationFirst
+          : verificationStatus === "process"
+          ? VerificationInProcess
+          : verificationStatus === "done"
+          ? VerificationSuccess
+          : VerificationFailed
+      }
+    >
       <div className="ver-card-container">
         {(type === "pvtLlpPublic" || type === "partnershipFirm") && (
           <div className="box pan-gst">
             <div className="content">{TEXT.verificationCardPanGST}</div>
             <div className="status">
-              {coPanGstStatus === "pending" ? (
-                "Pending"
-              ) : coPanGstStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={coPanGstStatus} />
             </div>
           </div>
         )}
@@ -90,13 +107,7 @@ const VerificationCard = () => {
           <div className="box pan-details">
             <div className="content">{TEXT.verificationCardPan}</div>
             <div className="status">
-              {panStatus === "pending" ? (
-                "Pending"
-              ) : panStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={panStatus} />
             </div>
           </div>
         )}
@@ -104,13 +115,7 @@ const VerificationCard = () => {
           <div className="box take-selfie">
             <div className="content">{TEXT.verificationCardSelfie}</div>
             <div className="status">
-              {selfieStatus === "pending" ? (
-                "Pending"
-              ) : selfieStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={selfieStatus} />
             </div>
           </div>
         )}
@@ -118,13 +123,7 @@ const VerificationCard = () => {
           <div className="box bank-details">
             <div className="content">{TEXT.verificationCardBank}</div>
             <div className="status">
-              {bankStatementStatus === "pending" ? (
-                "Pending"
-              ) : bankStatementStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={bankStatementStatus} />
             </div>
           </div>
         )}
@@ -132,13 +131,7 @@ const VerificationCard = () => {
           <div className="box choose-profession">
             <div className="content">{TEXT.verificationCardProfession}</div>
             <div className="status">
-              {professionStatus === "pending" ? (
-                "Pending"
-              ) : professionStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={professionStatus} />
             </div>
           </div>
         )}
@@ -146,13 +139,7 @@ const VerificationCard = () => {
           <div className="box din">
             <div className="content">{TEXT.verificationCardDIN}</div>
             <div className="status">
-              {dinStatus === "pending" ? (
-                "Pending"
-              ) : dinStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={dinStatus} />
             </div>
           </div>
         )}
@@ -160,13 +147,7 @@ const VerificationCard = () => {
           <div className="box co-bank">
             <div className="content">{TEXT.verificationCardCoBank}</div>
             <div className="status">
-              {bankStatementStatus === "pending" ? (
-                "Pending"
-              ) : bankStatementStatus === "done" ? (
-                <img src={GreenDone} alt="success" />
-              ) : (
-                <img src={OrangeFail} alt="fail" />
-              )}
+              <InputStatus input={bankStatementStatus} />
             </div>
           </div>
         )}
@@ -180,10 +161,29 @@ const VerificationCard = () => {
           background: `#FFFFFF`,
         }}
       >
-        CONTINUE &nbsp;
-        <img src={GreenRightArrow} alt="arrow" />
+        {verificationStatus === "pending" ? (
+          <>
+            CONTINUE &nbsp;
+            <img src={GreenRightArrow} alt="arrow" />
+          </>
+        ) : verificationStatus === "process" ? (
+          <>
+            VERIFICATION IN PROCESS &nbsp;
+            <img src={GreenRightArrow} alt="arrow" />
+          </>
+        ) : verificationStatus === "done" ? (
+          "VIEW ORDER SUMMARY"
+        ) : (
+          "VERIFICATION FAILED"
+        )}
       </Button>
-      <div className="verification-footer">{TEXT.verificationCardFooter}</div>
+      <div className="verification-footer">
+        {verificationStatus === "pending" || verificationStatus === "process"
+          ? TEXT.verificationCardFooter1
+          : verificationStatus === "done"
+          ? TEXT.verificationCardFooter2
+          : TEXT.verificationCardFooter3}
+      </div>
     </Card>
   );
 };

@@ -11,8 +11,3 @@
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
 }
-
-/* .director-din-form #employeeSelect {
-  content: "*";
-  color: aquamarine;
-} */
