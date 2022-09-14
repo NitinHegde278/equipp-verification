@@ -29,7 +29,6 @@ const CoPanGst = () => {
         navigate(`/layout/verificationAnchor/${type}/panDetails`);
       }
     } else {
-      changeInput("verificationStatus", "fail");
       changeInput("coPanGstStatus", "fail");
       if (type === "pvtLlpPublic") {
         navigate(`/layout/verificationAnchor/${type}/directorDin`);

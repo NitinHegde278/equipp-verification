@@ -25,7 +25,6 @@ const DirectorDin = () => {
     if (dinNumber.length > 0) {
       changeInput("dinStatus", "done");
     } else {
-      changeInput("verificationStatus", "fail");
       changeInput("dinStatus", "fail");
     }
     navigate(`/layout/verificationAnchor/${type}/bankStatement`);
