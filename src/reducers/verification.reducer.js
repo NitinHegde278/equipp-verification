@@ -5,6 +5,7 @@ export const VERIFICATION_INITIAL_STATE = {
   typeSelect: 1,
   panMobileNumber: "",
   panFile: new File([], ""),
+  panFileError: false,
   panStatus: "pending",
   selfieImage: "",
   selfieStatus: "pending",

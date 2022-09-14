@@ -81,7 +81,7 @@ const OtpCard = ({ handleTitle }) => {
       Image={OtpArt}
     >
       <form className="otp-form" onSubmit={handleSubmit}>
-        <div className="otp-container d-flex flex-row">
+        <div className="otp-container d-flex flex-row justify-content-center">
           <div className="form-group d-flex flex-column align-items-center">
             <input
               className="otp-field form-control"
@@ -147,6 +147,7 @@ const OtpCard = ({ handleTitle }) => {
             border: `1px solid #C76537`,
             color: `#426572`,
             background: `#FFFFFF`,
+            width: `100%`,
           }}
         >
           CONTINUE &nbsp;

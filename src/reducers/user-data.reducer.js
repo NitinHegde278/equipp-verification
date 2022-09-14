@@ -2,6 +2,7 @@ import { USER_ACTION_TYPES } from "./user-data.actionTypes";
 
 export const USER_INITIAL_STATE = {
   mobileNumber: "",
+  newUser: false,
   fullName: "",
   emailId: "",
   otp: "",

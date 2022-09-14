@@ -10,12 +10,12 @@ import { TEXT } from "../../utils/constants";
 
 const NameEmailCard = ({ handleTitle }) => {
   const navigate = useNavigate();
-  const { fullName, emailId, mobileNumber, changeInput } =
+  const { fullName, emailId, mobileNumber, newUser, changeInput } =
     useContext(UserDataContext);
 
   useEffect(() => {
     handleTitle("STUDENT");
-    if (mobileNumber.length === 0) {
+    if (mobileNumber.length === 0 || !newUser) {
       navigate("/layout/mobile");
     }
   });
@@ -67,6 +67,7 @@ const NameEmailCard = ({ handleTitle }) => {
             value={emailId}
             placeholder="Enter Email ID"
             onChange={handleChange}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             required
           />
         </div>
@@ -75,6 +76,7 @@ const NameEmailCard = ({ handleTitle }) => {
             border: `1px solid #C76537`,
             color: `#426572`,
             background: `#FFFFFF`,
+            width: `100%`,
           }}
         >
           CONTINUE &nbsp;

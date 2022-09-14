@@ -1,5 +1,8 @@
+.otp-form {
+  width: 300px;
+}
+
 .otp-container {
-  width: 325px;
   column-gap: 10px;
 }
 
@@ -43,12 +46,7 @@ input[type="number"] {
 }
 
 @media screen and (max-width: 385px) {
-  .otp-field {
-    width: 40px;
-    height: 44px;
-  }
   .otp-container {
-    width: 275px;
     column-gap: 6px;
   }
 }

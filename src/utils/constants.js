@@ -130,6 +130,7 @@ export const TEXT = {
   selfieSubtext:
     "Make sure we can see your full face clearly no hats, glasses or anything that obstructs your face",
   wrongOtp: "The OTP entered is wrong. Please try again",
+  wrongInput: "Wrong input, please enter again",
   professionTitle: "Choose type",
   professionSubtitle: "of profession",
   workEmailTitle: "Work Email",

@@ -8,6 +8,7 @@ import {
 
 export const UserDataContext = createContext({
   mobileNumber: "",
+  newUser: false,
   fullName: "",
   emailId: "",
   otp: "",

@@ -33,21 +33,15 @@ const VerifyBank = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (verifyPassword.length !== 0) {
-      changeInput("verificationStatus", "done");
       changeInput("bankStatementStatus", "done");
-      if (type === "workingProfessional") {
-        navigate(`/layout/verificationAnchor/${type}/profession`);
-      } else {
-        navigate(`/layout/verificationAnchor/${type}`);
-      }
     } else {
-      changeInput("verificationStatus", "fail");
       changeInput("bankStatementStatus", "fail");
-      if (type === "workingProfessional") {
-        navigate(`/layout/verificationAnchor/${type}/profession`);
-      } else {
-        navigate(`/layout/verificationAnchor/${type}`);
-      }
+    }
+
+    if (type === "workingProfessional") {
+      navigate(`/layout/verificationAnchor/${type}/profession`);
+    } else {
+      navigate(`/layout/verificationAnchor/${type}`);
     }
   };
 

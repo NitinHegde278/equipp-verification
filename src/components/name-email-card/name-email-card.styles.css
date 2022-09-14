@@ -9,15 +9,9 @@
 }
 
 .name-email-form {
-  margin-top: -4vh;
+  width: 300px;
 }
 
 #emailId {
   margin-bottom: 4vh;
-}
-
-@media screen and (max-width: 800px) {
-  #fullName {
-    margin-top: 3vh;
-  }
 }

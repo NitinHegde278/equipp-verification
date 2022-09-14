@@ -36,10 +36,10 @@ const MobileCard = ({ handleTitle }) => {
       changeInput("fullName", mockResponse.fullName);
       changeInput("emailId", mockResponse.emailId);
       changeInput("otp", mockResponse.otp);
+      changeInput("newUser", false);
       navigate("/layout/otp");
     } else {
-      changeInput("fullName", "");
-      changeInput("emailId", "");
+      changeInput("newUser", true);
       navigate("/layout/nameEmail");
     }
   };
@@ -71,6 +71,7 @@ const MobileCard = ({ handleTitle }) => {
             border: `1px solid #C76537`,
             color: `#426572`,
             background: `#FFFFFF`,
+            width: `100%`,
           }}
         >
           CONTINUE &nbsp;

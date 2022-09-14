@@ -41,13 +41,11 @@ const BankStatement = () => {
     } else if (bankStatementTerms && bankFile.size > 0) {
       changeInput("bankStatementStatus", "done");
       if (type !== "workingProfessional") {
-        changeInput("verificationStatus", "done");
         navigate(`/layout/verificationAnchor/${type}`);
       } else {
         navigate(`/layout/verificationAnchor/${type}/profession`);
       }
     } else {
-      changeInput("verificationStatus", "fail");
       changeInput("bankStatementStatus", "fail");
       if (type !== "workingProfessional") {
         navigate(`/layout/verificationAnchor/${type}`);

@@ -21,7 +21,6 @@ const Selfie = () => {
     if (selfieImage.length) {
       changeInput("selfieStatus", "done");
     } else {
-      changeInput("verificationStatus", "fail");
       changeInput("selfieStatus", "fail");
     }
     navigate(`/layout/verificationAnchor/${type}/bankStatement`);
@@ -31,19 +30,17 @@ const Selfie = () => {
     setButton(!button);
     if (button) {
       const canvas = document.getElementById("selfie-canvas");
-      canvas.width = 220;
-      canvas.height = 220;
+      canvas.width = 640;
+      canvas.height = 640;
       canvas
         .getContext("2d")
-        .drawImage(capture, -90, -20, capture.videoWidth, capture.videoHeight);
+        .drawImage(capture, 0, 0, capture.videoWidth, capture.videoHeight);
       const image = canvas
         .toDataURL("image/png")
         .replace("image/png", "image/octet-stream");
       changeInput("selfieImage", image);
 
-      const stream = capture.srcObject;
-      const tracks = stream.getTracks();
-
+      const tracks = capture.srcObject.getTracks();
       tracks.forEach((track) => {
         track.stop();
       });
@@ -56,25 +53,20 @@ const Selfie = () => {
   useEffect(() => {
     if (panStatus === "pending") {
       setTimeout(() => {
-        const stream = capture.srcObject;
-        const tracks = stream.getTracks();
+        const tracks = capture.srcObject.getTracks();
 
         tracks.forEach((track) => {
           track.stop();
         });
         navigate(`/layout/verificationAnchor/${type}/panDetails`);
-      }, 1500);
+      }, 2000);
     }
   });
 
   useEffect(() => {
-    changeInput("selfieImage", "");
     const video = document.getElementById("selfie-video");
     const constraints = {
-      video: {
-        width: 320,
-        height: 320,
-      },
+      video: true,
     };
     const startWebCam = async () => {
       try {
@@ -86,30 +78,46 @@ const Selfie = () => {
         console.error(error);
       }
     };
-    startWebCam();
 
-    // eslint-disable-next-line
+    if (!capture) {
+      startWebCam();
+    } else {
+      return () => {
+        const tracks = capture.srcObject.getTracks();
+        tracks.forEach((track) => {
+          track.stop();
+        });
+      };
+    }
   }, [capture]);
 
   return (
     <Card title={TEXT.selfieTitle}>
-      <div className="d-flex flex-column align-items-center gap-2">
-        <video
-          id="selfie-video"
-          className={selfieImage.length ? "hidden" : undefined}
-          autoPlay
-        ></video>
-        <canvas
-          id="selfie-canvas"
-          className={!selfieImage.length ? "hidden" : undefined}
-        ></canvas>
+      <div className="selfie-form d-flex flex-column align-items-center gap-2">
+        <div className="selfie-container">
+          <video
+            id="selfie-video"
+            className={selfieImage.length ? "hidden" : undefined}
+            autoPlay
+          ></video>
+          <canvas id="selfie-canvas" hidden></canvas>
+          <img
+            src={selfieImage}
+            className={`img-fluid selfie-image ${
+              !selfieImage.length ? "hidden" : undefined
+            }`}
+            alt="selfie"
+          />
+        </div>
+
         <div className="camera-text">{TEXT.selfieSubtext}</div>
         <Button
           style={{
             border: `1px solid #C76537`,
             color: `#426572`,
             background: `#FFFFFF`,
-            width: `35%`,
+            width: `40%`,
+            height: `40px`,
           }}
           clickEvent={handleCapture}
         >
@@ -120,6 +128,7 @@ const Selfie = () => {
             border: `1px solid #C76537`,
             color: `#426572`,
             background: `#FFFFFF`,
+            width: `100%`,
           }}
           clickEvent={handleNavigation}
           isDisabled={!selfieImage.length}

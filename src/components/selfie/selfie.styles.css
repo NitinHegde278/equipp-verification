@@ -1,12 +1,22 @@
-#selfie-video {
-  width: 220px;
+.selfie-form {
+  width: 320px;
+}
+.selfie-container {
+  width: 222px;
   height: 220px;
   border: 1.5px solid var(--onboard-main-text);
   border-radius: 12px;
+  overflow: hidden;
 }
 
-#selfie-canvas {
-  border: 1.5px solid var(--onboard-main-text);
+#selfie-video {
+  width: 217px;
+  height: 217px;
+}
+
+.selfie-image {
+  width: 100%;
+  height: 290px;
   border-radius: 12px;
 }
 
@@ -14,7 +24,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  width: 70%;
+  width: 84%;
   text-align: center;
   color: var(--card-subtitle);
 }

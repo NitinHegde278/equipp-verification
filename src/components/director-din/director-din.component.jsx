@@ -69,6 +69,7 @@ const DirectorDin = () => {
             color: `#426572`,
             background: `#FFFFFF`,
             height: `40px`,
+            width: `100%`,
           }}
         >
           CONTINUE &nbsp;

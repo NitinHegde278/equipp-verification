@@ -24,7 +24,6 @@ const WorkEmail = () => {
     event.preventDefault();
     if (workEmail.length > 0) {
       changeInput("professionStatus", "done");
-      changeInput("verificationStatus", "done");
     } else {
       changeInput("professionalStatus", "fail");
     }
@@ -52,6 +51,7 @@ const WorkEmail = () => {
             value={workEmail}
             placeholder="Enter email id"
             onChange={handleChange}
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             required
           />
         </div>
@@ -61,6 +61,7 @@ const WorkEmail = () => {
             color: `#426572`,
             background: `#FFFFFF`,
             height: `40px`,
+            width: `100%`,
           }}
         >
           VERIFY &nbsp;

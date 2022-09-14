@@ -32,6 +32,7 @@ const CheckoutAddress = ({ handleTitle }) => {
           border: `1px solid #C76537`,
           color: `#426572`,
           background: `#FFFFFF`,
+          width: `100%`,
         }}
         clickEvent={handleNavigation}
       >

@@ -11,6 +11,7 @@ export const VerificationContext = createContext({
   typeSelect: 1,
   panMobileNumber: "",
   panFile: new File([], ""),
+  panFileError: false,
   panStatus: "pending",
   selfieImage: "",
   selfieStatus: "pending",

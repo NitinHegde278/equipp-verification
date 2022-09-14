@@ -11,6 +11,8 @@ import "./verification-card.styles.css";
 import { useContext } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
 import InputStatus from "../utils/input-status/input.status.component";
+import { useEffect } from "react";
+import { verificationStatusProvider } from "../../utils/helper";
 
 const VerificationCard = () => {
   const navigate = useNavigate();
@@ -26,6 +28,36 @@ const VerificationCard = () => {
     changeInput,
   } = useContext(VerificationContext);
 
+  useEffect(() => {
+    if (type !== "workingProfessional" && bankStatementStatus !== "pending") {
+      verificationStatusProvider(
+        changeInput,
+        type,
+        panStatus,
+        selfieStatus,
+        bankStatementStatus,
+        professionStatus,
+        coPanGstStatus,
+        dinStatus
+      );
+    } else if (
+      type === "workingProfessional" &&
+      professionStatus !== "pending"
+    ) {
+      verificationStatusProvider(
+        changeInput,
+        type,
+        panStatus,
+        selfieStatus,
+        bankStatementStatus,
+        professionStatus,
+        coPanGstStatus,
+        dinStatus
+      );
+    }
+    // eslint-disable-next-line
+  }, [bankStatementStatus, professionStatus]);
+
   const handleNavigation = () => {
     switch (type) {
       case "student":
@@ -35,8 +67,6 @@ const VerificationCard = () => {
           navigate("selfie");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
-        } else {
-          changeInput("verificationStatus", "done");
         }
         break;
       case "workingProfessional":
@@ -48,8 +78,6 @@ const VerificationCard = () => {
           navigate("bankStatement");
         } else if (professionStatus === "pending") {
           navigate("profession");
-        } else {
-          changeInput("verificationStatus", "done");
         }
         break;
       case "partnershipFirm":
@@ -61,8 +89,6 @@ const VerificationCard = () => {
           navigate("selfie");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
-        } else {
-          changeInput("verificationStatus", "done");
         }
         break;
       case "pvtLlpPublic":
@@ -72,8 +98,6 @@ const VerificationCard = () => {
           navigate("directorDin");
         } else if (bankStatementStatus === "pending") {
           navigate("bankStatement");
-        } else {
-          changeInput("verificationStatus", "done");
         }
         break;
       default:
