@@ -90,3 +90,33 @@
     width: 103vw;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .group-logo {
+    width: 81px;
+    height: 76px;
+  }
+  .main-logo {
+    width: 180px;
+  }
+  .sub-content {
+    margin-top: 32vh;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  .sub-content {
+    margin-top: 32vh;
+  }
+
+  .main-content {
+    margin-top: -30px;
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  .art-board {
+    margin-top: 10vh;
+  }
+}

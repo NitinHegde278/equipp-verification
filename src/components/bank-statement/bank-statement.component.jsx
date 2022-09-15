@@ -80,7 +80,7 @@ const BankStatement = () => {
       <form className="bank-details-form" onSubmit={handleSubmit}>
         <div className="form-group custom-file-button d-flex align-items-center">
           <input
-            accept=".pdf,.jpeg,.png"
+            accept="application/pdf"
             id="bankFile"
             name="bankFile"
             className="form-control"

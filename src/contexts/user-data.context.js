@@ -12,6 +12,7 @@ export const UserDataContext = createContext({
   fullName: "",
   emailId: "",
   otp: "",
+  addressSelect: 1,
   changeInput: () => {},
 });
 

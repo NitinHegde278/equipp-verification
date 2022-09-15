@@ -12,18 +12,16 @@ const CheckoutCard = ({ order }) => {
       <div className="card-group checkout-card row">
         <div className="card d-flex justify-content-center image-box">
           <img
-            className="img-fluid"
+            className="img"
             src={LaptopPlaceholder}
             alt="Laptop placeholder"
           />
         </div>
         <div className="card detail-box">
-          <div className="card-title checkout-title d-flex justify-content-between">
+          <div className="card-title checkout-title d-flex">
             {order?.productName}
           </div>
-          <div className="close" onClick={handleClose}>
-            &times;
-          </div>
+          <div className="btn-close close" onClick={handleClose}></div>
           <div>
             <div className="amount text-start">
               Rs. {order?.monthlyRental + order?.insurance + order?.gst}

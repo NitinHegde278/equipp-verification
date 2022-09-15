@@ -1,16 +1,23 @@
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import "./verification-anchor.styles.css";
 import { Route, Routes, useParams } from "react-router";
-import PanDetails from "../pan-details/pan-details.component";
-import VerificationCard from "../verification-card/verification-card.component";
-import NoPage from "../no-page/no-page.component";
-import Selfie from "../selfie/selfie.component";
-import BankStatement from "../bank-statement/bank-statement.component";
-import VerifyBank from "../verify-bank/verify-bank.component";
-import Profession from "../profession/profession.component";
-import WorkEmail from "../work-email/work-email.component";
-import CoPanGst from "../co-pan-gst/co-pan-gst.component";
-import DirectorDin from "../director-din/director-din.component";
+
+const PanDetails = lazy(() => import("../pan-details/pan-details.component"));
+const VerificationCard = lazy(() =>
+  import("../verification-card/verification-card.component")
+);
+const NoPage = lazy(() => import("../no-page/no-page.component"));
+const Selfie = lazy(() => import("../selfie/selfie.component"));
+const BankStatement = lazy(() =>
+  import("../bank-statement/bank-statement.component")
+);
+const VerifyBank = lazy(() => import("../verify-bank/verify-bank.component"));
+const Profession = lazy(() => import("../profession/profession.component"));
+const WorkEmail = lazy(() => import("../work-email/work-email.component"));
+const CoPanGst = lazy(() => import("../co-pan-gst/co-pan-gst.component"));
+const DirectorDin = lazy(() =>
+  import("../director-din/director-din.component")
+);
 
 const VerificationAnchor = ({ handleTitle }) => {
   const { "*": param } = useParams();

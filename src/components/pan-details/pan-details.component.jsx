@@ -77,7 +77,7 @@ const PanDetails = () => {
 
         <div className="form-group custom-file-button d-flex align-items-center">
           <input
-            accept=".pdf,.jpeg,.png"
+            accept="application/pdf,image/png,image/jpeg"
             id="panFile"
             name="panFile"
             className="form-control"

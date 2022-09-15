@@ -53,6 +53,24 @@ export const ORDERS = [
   },
 ];
 
+export const ADDRESS_INFO = [
+  {
+    addressId: 1,
+    address:
+      "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
+  },
+  {
+    addressId: 2,
+    address:
+      "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
+  },
+  {
+    addressId: 3,
+    address:
+      "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
+  },
+];
+
 export const CHOOSE_TYPE = {
   1: "student",
   2: "workingProfessional",
@@ -72,8 +90,6 @@ export const TEXT = {
   checkoutCardInstallment2: "installment",
   checkoutCardCycle: "Payment Cycle",
   checkoutAddressTitle: "Choose Address",
-  checkoutAddressInfo:
-    "134, apz apartments, near tech park, Bellandur Cross, Electronic City Phase 1, Bengaluru Urban, Bengaluru, Karnataka - 560094",
   chooseTypeTitle: "Lets get you verified",
   chooseTypeSubtitle: "Choose which suits you best",
   cardSubtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
