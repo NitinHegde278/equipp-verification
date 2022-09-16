@@ -29,12 +29,13 @@ const CheckoutAddress = ({ handleTitle }) => {
   return (
     <Card title={TEXT.checkoutAddressTitle} Image={ChooseAddressArt}>
       <div className="address-container">
-        {ADDRESS_INFO.map((address) => {
+        {ADDRESS_INFO.map((address, index) => {
           return (
             <div
               className={`container d-flex address-box ${
                 addressSelect === address?.addressId && "isActive"
               }`}
+              data-testid={`address${index}`}
               key={address?.addressId}
               onClick={() => handleAddressSelect(address?.addressId)}
             >

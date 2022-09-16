@@ -11,6 +11,7 @@
 
 .summary-container {
   row-gap: 15px;
+  padding-bottom: 25px;
 }
 
 .summary-card {

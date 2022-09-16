@@ -82,11 +82,13 @@ const PanDetails = () => {
             name="panFile"
             className="form-control"
             type="file"
+            data-testid="panFile"
             onChange={handleChange}
             required
           />
           <div
             className="pan-box d-flex justify-content-between align-items-center p-2"
+            data-testid="panUpload"
             onClick={handleFileUpload}
           >
             <div className="text d-flex">

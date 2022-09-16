@@ -13,7 +13,7 @@ const CheckoutSummary = ({ handleTitle }) => {
 
   useEffect(() => {
     handleTitle("CHECKOUT");
-    if (!state) {
+    if (state === null) {
       navigate("/layout/orders");
     }
   });
@@ -23,54 +23,60 @@ const CheckoutSummary = ({ handleTitle }) => {
   };
 
   return (
-    <div className="container row checkout-container">
-      <div className="col-md-7 d-flex justify-content-end detail-container">
-        <div className="card detail-card">
-          <CheckoutCard order={state} />
-        </div>
-      </div>
-      <div className="col-md-5 d-flex flex-column align-items-start summary-container">
-        <div className="card summary-card">
-          <div className="card-title summary-title text-start">
-            {TEXT.checkoutSummaryTitle}
-          </div>
-          <div className="container summary-block d-flex flex-row justify-content-between text-start">
-            <div className="summary-content summary-header">
-              <div>{TEXT.checkoutSummaryMonthly}</div>
-              <div>{TEXT.checkoutSummaryInsurance}</div>
-              <div>{TEXT.checkoutSummaryGST}</div>
-            </div>
-            <div className="summary-content summary-value">
-              <div> ₹ {state?.monthlyRental}</div>
-              <div> ₹ {state?.insurance}</div>
-              <div> ₹ {state?.gst}</div>
+    <>
+      {state && (
+        <div className="container row checkout-container">
+          <div className="col-md-7 d-flex justify-content-end detail-container">
+            <div className="card detail-card">
+              <CheckoutCard order={state} />
             </div>
           </div>
-          <div className="container total-block d-flex flex-row justify-content-between text-start">
-            <div className="total">{TEXT.checkoutSummaryTotal}</div>
-            <div className="amount">
-              ₹ {state?.monthlyRental + state?.insurance + state?.gst}
+          <div className="col-md-5 d-flex flex-column align-items-start summary-container">
+            <div className="card summary-card">
+              <div className="card-title summary-title text-start">
+                {TEXT.checkoutSummaryTitle}
+              </div>
+              <div className="container summary-block d-flex flex-row justify-content-between text-start">
+                <div className="summary-content summary-header">
+                  <div>{TEXT.checkoutSummaryMonthly}</div>
+                  <div>{TEXT.checkoutSummaryInsurance}</div>
+                  <div>{TEXT.checkoutSummaryGST}</div>
+                </div>
+                <div className="summary-content summary-value">
+                  <div> ₹ {state?.monthlyRental}</div>
+                  <div> ₹ {state?.insurance}</div>
+                  <div> ₹ {state?.gst}</div>
+                </div>
+              </div>
+              <div className="container total-block d-flex flex-row justify-content-between text-start">
+                <div className="total">{TEXT.checkoutSummaryTotal}</div>
+                <div className="amount">
+                  ₹ {state?.monthlyRental + state?.insurance + state?.gst}
+                </div>
+              </div>
+              <div className="paying text-end">
+                {TEXT.checkoutSummaryPaying}
+              </div>
             </div>
+            <div className="kyc-text">
+              <img src={InfoIcon} alt="Info icon" /> &nbsp;{" "}
+              {TEXT.checkoutSummaryKYC}
+            </div>
+            <Button
+              style={{
+                background: `linear-gradient(263.44deg, #C76537 0.13%, #EF9571 30.69%, #BC5137 62.42%, #F6996B 117.66%)`,
+                color: `#FFFFFF`,
+                width: `65%`,
+              }}
+              clickEvent={handleContinue}
+            >
+              CONTINUE &nbsp;
+              <img src={RightArrow} alt="arrow" />
+            </Button>
           </div>
-          <div className="paying text-end">{TEXT.checkoutSummaryPaying}</div>
         </div>
-        <div className="kyc-text">
-          <img src={InfoIcon} alt="Info icon" /> &nbsp;{" "}
-          {TEXT.checkoutSummaryKYC}
-        </div>
-        <Button
-          style={{
-            background: `linear-gradient(263.44deg, #C76537 0.13%, #EF9571 30.69%, #BC5137 62.42%, #F6996B 117.66%)`,
-            color: `#FFFFFF`,
-            width: `65%`,
-          }}
-          clickEvent={handleContinue}
-        >
-          CONTINUE &nbsp;
-          <img src={RightArrow} alt="arrow" />
-        </Button>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

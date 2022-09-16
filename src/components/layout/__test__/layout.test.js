@@ -32,7 +32,9 @@ describe("Layout Component", () => {
 
   test("Render checkout-summary component", async () => {
     render(
-      <MemoryRouter initialEntries={["/checkoutSummary"]}>
+      <MemoryRouter
+        initialEntries={[{ pathname: "/checkoutSummary", state: ORDERS[0] }]}
+      >
         <Layout />
       </MemoryRouter>
     );
@@ -76,6 +78,28 @@ describe("Layout Component", () => {
     expect(titleElement).toBeInTheDocument();
   });
 
+  test("Render verification-anchor component", async () => {
+    render(
+      <MemoryRouter initialEntries={["/verificationAnchor/student"]}>
+        <Layout />
+      </MemoryRouter>
+    );
+
+    const titleElement = await screen.findAllByText(/Verification/i);
+    expect(titleElement[0]).toBeInTheDocument();
+  });
+
+  test("Render choose-type component", async () => {
+    render(
+      <MemoryRouter initialEntries={["/chooseType"]}>
+        <Layout />
+      </MemoryRouter>
+    );
+
+    const titleElement = await screen.findByText(/Lets get you verified/i);
+    expect(titleElement).toBeInTheDocument();
+  });
+
   test("Render no-page component", async () => {
     render(
       <MemoryRouter initialEntries={["/badUrl"]}>
@@ -83,7 +107,7 @@ describe("Layout Component", () => {
       </MemoryRouter>
     );
 
-    const titleElement = await screen.findByText(/404/i);
+    const titleElement = await screen.findByText(/Error 404, page not found./i);
     expect(titleElement).toBeInTheDocument();
   });
 

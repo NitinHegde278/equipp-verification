@@ -29,7 +29,7 @@ test("landing on a bad page", async () => {
       <App />
     </MemoryRouter>
   );
-  const textNode = await screen.findByText(/404/i);
+  const textNode = await screen.findByText(/Error 404, page not found./i);
   // verify navigation to "no match" route
   expect(textNode).toBeInTheDocument();
 });

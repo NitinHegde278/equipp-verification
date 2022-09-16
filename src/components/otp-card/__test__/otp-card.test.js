@@ -31,7 +31,7 @@ describe("OTP Card component", () => {
   });
 
   test("Handle the input change event for otp", () => {
-    const inputNode = screen.getAllByRole("textbox", { name: "" });
+    const inputNode = screen.getAllByRole("spinbutton", { name: "" });
     fireEvent.change(inputNode[0], {
       target: { value: "2" },
     });
@@ -39,7 +39,7 @@ describe("OTP Card component", () => {
   });
 
   test("Handle the correct OTP submit event for user to redirect to orders page", () => {
-    const inputNode = screen.getAllByRole("textbox", { name: "" });
+    const inputNode = screen.getAllByRole("spinbutton", { name: "" });
     inputNode.forEach((input, index) => {
       fireEvent.change(inputNode[index], {
         target: { value: index + 1 },
@@ -58,7 +58,7 @@ describe("OTP Card component", () => {
 
   test("Event listener on keyup for OTP fields", () => {
     const callback = jest.fn();
-    const inputNode = screen.getAllByRole("textbox", { name: "" });
+    const inputNode = screen.getAllByRole("spinbutton", { name: "" });
     inputNode.forEach((input, index) => {
       input.addEventListener("keyup", callback);
       fireEvent.change(input, { target: { value: index + 1 } });

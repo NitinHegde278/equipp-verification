@@ -21,7 +21,11 @@ const CheckoutCard = ({ order }) => {
           <div className="card-title checkout-title d-flex">
             {order?.productName}
           </div>
-          <div className="btn-close close" onClick={handleClose}></div>
+          <div
+            className="btn-close close"
+            data-testid="closeButton"
+            onClick={handleClose}
+          ></div>
           <div>
             <div className="amount text-start">
               Rs. {order?.monthlyRental + order?.insurance + order?.gst}

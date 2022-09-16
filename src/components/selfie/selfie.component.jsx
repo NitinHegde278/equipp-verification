@@ -79,7 +79,7 @@ const Selfie = () => {
       }
     };
 
-    if (!capture) {
+    if (capture.length === 0) {
       startWebCam();
     } else {
       return () => {

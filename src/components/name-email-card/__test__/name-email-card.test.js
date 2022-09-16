@@ -8,7 +8,13 @@ describe("Name Email Card component", () => {
 
   beforeEach(() => {
     render(
-      <UserDataContext.Provider value={{ changeInput: jest.fn() }}>
+      <UserDataContext.Provider
+        value={{
+          changeInput: jest.fn(),
+          mobileNumber: "1234567899",
+          newUser: true,
+        }}
+      >
         <NameEmailCard handleTitle={spy} />
       </UserDataContext.Provider>,
       { wrapper: BrowserRouter }
