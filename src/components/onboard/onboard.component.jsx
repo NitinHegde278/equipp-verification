@@ -1,5 +1,4 @@
 import "./onboard.styles.css";
-import GroupLogo from "../../assets/images/GrouplogoTop.svg";
 import LoadingGif from "../../assets/images/loading.gif";
 import MainLogo from "../../assets/images/mainLogo.svg";
 import Button from "../utils/button/button.component";
