@@ -33,3 +33,15 @@
 .hidden {
   display: none;
 }
+
+@media screen and (max-width: 450px) {
+  .selfie-image {
+    margin-top: -30px;
+  }
+}
+
+@media screen and (min-height: 645px) {
+  .selfie-image {
+    margin-top: -30px;
+  }
+}
