@@ -62,3 +62,11 @@ export const verificationStatusProvider = (
     changeInput("verificationStatus", "done");
   }
 };
+
+export const maskedMobileNumber = (mobileNumber) => {
+  return mobileNumber.replace(mobileNumber.substring(2, 9), "*******");
+};
+
+export const maskedEmailId = (emailId) => {
+  return emailId.replace(emailId.substring(2, 6), "****");
+};

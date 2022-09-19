@@ -83,6 +83,7 @@ const BankStatement = () => {
             accept="application/pdf"
             id="bankFile"
             name="bankFile"
+            data-testid="bankFile"
             className="form-control"
             type="file"
             onChange={handleChange}
@@ -90,6 +91,7 @@ const BankStatement = () => {
           />
           <div
             className="bank-box d-flex justify-content-between align-items-center p-2"
+            data-testid="bankUpload"
             onClick={handleFileUpload}
           >
             <div className="text d-flex">
@@ -104,12 +106,14 @@ const BankStatement = () => {
         <div className="pwd-checkbox d-flex justify-content-center gap-2">
           <div
             className={`check pwd-yes ${bankStatementPwd === 1 && "isActive"}`}
+            data-testid="yesPwd"
             onClick={handleChange}
           >
             YES
           </div>
           <div
             className={`check pwd-no ${bankStatementPwd === 2 && "isActive"}`}
+            data-testid="noPwd"
             onClick={handleChange}
           >
             NO
@@ -133,6 +137,7 @@ const BankStatement = () => {
           <input
             id="bankStatementTerms"
             name="bankStatementTerms"
+            data-testid="bankStatementTerms"
             className="form-control form-check-input"
             type="checkbox"
             value={bankStatementTerms}

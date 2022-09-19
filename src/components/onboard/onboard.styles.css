@@ -15,13 +15,11 @@
 }
 
 .group-logo {
-  margin-top: 70px;
-  width: 101px;
-  height: 96px;
+  margin-top: -40px;
+  width: 250px;
 }
 
 .main-logo {
-  margin-top: 30px;
   width: 220px;
 }
 
@@ -93,8 +91,8 @@
 
 @media screen and (max-width: 760px) {
   .group-logo {
-    width: 81px;
-    height: 76px;
+    margin-top: 0;
+    width: 160px;
   }
   .main-logo {
     width: 180px;

@@ -7,6 +7,7 @@ import Card from "../utils/card/card.component";
 import "./otp-card.styles.css";
 import { useNavigate } from "react-router-dom";
 import { TEXT } from "../../utils/constants";
+import { maskedEmailId, maskedMobileNumber } from "../../utils/helper";
 
 const OtpCard = ({ handleTitle }) => {
   const navigate = useNavigate();
@@ -14,13 +15,6 @@ const OtpCard = ({ handleTitle }) => {
   const [otpObj, setOtpObj] = useState({});
   const [otpError, setOtpError] = useState("");
   const [timer, setTimer] = useState(60);
-
-  const maskedMobileNumber = mobileNumber.replace(
-    mobileNumber.substring(2, 9),
-    "*******"
-  );
-
-  const maskedEmailId = emailId.replace(emailId.substring(2, 6), "****");
 
   const timeOutCallback = useCallback(
     () => setTimer((currTimer) => currTimer - 1),
@@ -77,7 +71,9 @@ const OtpCard = ({ handleTitle }) => {
     <Card
       title={TEXT.cardOtpTitle}
       subTitle={fullName}
-      subText={`${TEXT.cardOtpsubText} +91${maskedMobileNumber} & ${maskedEmailId}`}
+      subText={`${TEXT.cardOtpsubText} +91${maskedMobileNumber(
+        mobileNumber
+      )} & ${maskedEmailId(emailId)}`}
       Image={OtpArt}
     >
       <form className="otp-form" onSubmit={handleSubmit}>

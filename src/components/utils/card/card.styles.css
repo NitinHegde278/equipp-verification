@@ -1,5 +1,5 @@
 .card-main {
-  width: 380px;
+  width: 350px;
 }
 
 .card-main .card-body {
@@ -40,6 +40,6 @@
 
 @media screen and (max-width: 385px) {
   .card-main {
-    width: 390px;
+    width: 340px;
   }
 }

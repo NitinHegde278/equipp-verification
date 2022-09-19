@@ -1,5 +1,5 @@
 .selfie-form {
-  width: 320px;
+  width: 300px;
 }
 .selfie-container {
   width: 222px;
@@ -26,7 +26,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  width: 84%;
+  width: 88%;
   text-align: center;
   color: var(--card-subtitle);
 }

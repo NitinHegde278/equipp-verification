@@ -52,10 +52,7 @@
         "lines": 80,
         "statements": 80
       }
-    },
-    "setupFiles": [
-      "jest-canvas-mock"
-    ]
+    }
   },
   "devDependencies": {
     "canvas": "^2.10.1",

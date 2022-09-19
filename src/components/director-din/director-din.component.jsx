@@ -11,7 +11,7 @@ import { VerificationContext } from "../../contexts/verification.context";
 const DirectorDin = () => {
   const navigate = useNavigate();
   const { type } = useParams();
-  const { dinNumber, coPanGstStatus, changeInput } =
+  const { dinNumber, employeeSelect, coPanGstStatus, changeInput } =
     useContext(VerificationContext);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const DirectorDin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (dinNumber.length > 0) {
+    if (dinNumber.length > 0 && employeeSelect.length > 0) {
       changeInput("dinStatus", "done");
     } else {
       changeInput("dinStatus", "fail");

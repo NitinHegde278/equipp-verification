@@ -89,9 +89,7 @@ describe("Verification Anchor Component", () => {
       <MemoryRouter
         initialEntries={["/verificationAnchor/workingProfessional/profession"]}
       >
-        <Suspense fallback="loading...">
-          <Layout />
-        </Suspense>
+        <Layout />
       </MemoryRouter>
     );
     const titleElement = await screen.findByText(/Error 404, page not found./i);
@@ -100,15 +98,18 @@ describe("Verification Anchor Component", () => {
   });
 
   test("Render Work email Component", async () => {
-    render(
-      <MemoryRouter
-        initialEntries={["/verificationAnchor/workingProfessional/workEmail"]}
-      >
-        <Suspense fallback="loading...">
-          <Layout />
-        </Suspense>
-      </MemoryRouter>
-    );
+    await waitFor(async () => {
+      await render(
+        <MemoryRouter
+          initialEntries={["/verificationAnchor/workingProfessional/workEmail"]}
+        >
+          <Suspense fallback="loading...">
+            <Layout />
+          </Suspense>
+        </MemoryRouter>
+      );
+    });
+
     const titleElement = await screen.findByText(/Work Email/i);
     expect(titleElement).toBeInTheDocument();
   });
@@ -132,9 +133,7 @@ describe("Verification Anchor Component", () => {
       <MemoryRouter
         initialEntries={["/verificationAnchor/pvtLlpPublic/directorDin"]}
       >
-        <Suspense fallback="loading...">
-          <Layout />
-        </Suspense>
+        <Layout />
       </MemoryRouter>
     );
 

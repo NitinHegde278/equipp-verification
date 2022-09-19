@@ -1,5 +1,6 @@
 import "./onboard.styles.css";
 import GroupLogo from "../../assets/images/GrouplogoTop.svg";
+import LoadingGif from "../../assets/images/loading.gif";
 import MainLogo from "../../assets/images/mainLogo.svg";
 import Button from "../utils/button/button.component";
 import RightArrow from "../../assets/icons/rightArrow.svg";
@@ -30,7 +31,7 @@ const Onboard = () => {
   return (
     <div className="row container-fluid onboard-container">
       <div className="left-panel col-12 col-sm-4 col-md-5 col-lg-5 d-flex flex-column align-items-center">
-        <img className="group-logo" src={GroupLogo} alt="Group Logo" />
+        <img className="img group-logo" src={LoadingGif} alt="Group Logo" />
         <img className="main-logo" src={MainLogo} alt="Equipp logo" />
         <span className="sub-content">{TEXT.onboardSubContent}</span>
         <span className="button-continue">
