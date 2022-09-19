@@ -34,7 +34,13 @@ const Selfie = () => {
       canvas.height = 640;
       canvas
         .getContext("2d")
-        .drawImage(capture, 0, 0, capture.videoWidth, capture.videoHeight);
+        .drawImage(
+          capture,
+          0,
+          0,
+          capture.videoWidth - 40,
+          capture.videoHeight - 40
+        );
       const image = canvas
         .toDataURL("image/png")
         .replace("image/png", "image/octet-stream");
@@ -66,7 +72,10 @@ const Selfie = () => {
   useEffect(() => {
     const video = document.getElementById("selfie-video");
     const constraints = {
-      video: true,
+      video: {
+        width: 640,
+        height: 640,
+      },
     };
     const startWebCam = async () => {
       try {
@@ -103,7 +112,7 @@ const Selfie = () => {
           <canvas id="selfie-canvas" hidden></canvas>
           <img
             src={selfieImage}
-            className={`img-fluid selfie-image ${
+            className={`img selfie-image ${
               !selfieImage.length ? "hidden" : undefined
             }`}
             alt="selfie"
