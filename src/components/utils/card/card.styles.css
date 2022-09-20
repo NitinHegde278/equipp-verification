@@ -1,5 +1,6 @@
 .card-main {
   width: 350px;
+  border-radius: 12px;
 }
 
 .card-main .card-body {
