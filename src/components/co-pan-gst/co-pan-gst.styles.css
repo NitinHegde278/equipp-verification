@@ -1,9 +1,10 @@
 .coPanGst-form {
   margin-top: 30px;
-  width: 23rem;
+  width: 22rem;
 }
 .coPanGst-form .form-control {
   height: 40px;
+  font-size: 0.9rem;
 }
 .coPanGst-form #coPan {
   margin-bottom: 15px;
@@ -20,5 +21,11 @@
 @media screen and (min-height: 900px) {
   .coPanGst-form {
     width: 21rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .coPanGst-form {
+    width: 19.5rem;
   }
 }

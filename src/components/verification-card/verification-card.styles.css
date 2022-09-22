@@ -20,21 +20,21 @@
   border: 1px solid var(--border-grey);
   border-radius: 10px;
   font-weight: 350;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   line-height: 14px;
   color: var(--verification-card-text);
 }
 
 .ver-card-container .status {
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 10px;
   color: var(--border-grey);
 }
 
 .verification-footer {
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   line-height: 10px;
   color: var(--verification-footer-orange);
   margin-top: 10px;
@@ -53,5 +53,11 @@
   }
   .verification-footer {
     margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .ver-card-container {
+    width: 19.5rem;
   }
 }

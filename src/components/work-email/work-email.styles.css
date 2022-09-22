@@ -11,4 +11,17 @@
 .work-email-form #workEmail {
   margin: 20px 0;
   height: 40px;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-height: 900px) {
+  .work-email-form {
+    width: 21rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .work-email-form {
+    width: 19.5rem;
+  }
 }

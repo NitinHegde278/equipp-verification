@@ -1,6 +1,6 @@
 .profession-check {
   margin-bottom: 20px;
-  width: 23rem;
+  width: 22rem;
   margin-top: -10px;
 }
 
@@ -25,5 +25,11 @@
 @media screen and (min-height: 900px) {
   .profession-check {
     width: 21rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .profession-check {
+    width: 19.5rem;
   }
 }

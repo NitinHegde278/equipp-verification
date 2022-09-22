@@ -7,10 +7,23 @@
   margin-top: 50px;
   margin-bottom: 15px;
   height: 40px;
+  font-size: 0.9rem;
 }
 
 .verify-bank-form #verifyPassword:focus {
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 900px) {
+  .verify-bank-form {
+    width: 21rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .verify-bank-form {
+    width: 19.5rem;
+  }
 }
