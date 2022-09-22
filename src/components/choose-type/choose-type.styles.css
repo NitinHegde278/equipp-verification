@@ -1,22 +1,35 @@
+.logout-img {
+  width: 1.3rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.2rem;
+  cursor: pointer;
+}
+
+.choose-type {
+  width: 23rem;
+  margin: auto;
+}
+
 .type-title {
-  width: 150px;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 2rem;
   line-height: 32px;
   color: var(--choose-select-green);
 }
 
 .type-subtitle {
   font-weight: 400;
-  font-size: 17px;
+  font-size: 1.1rem;
   line-height: 15px;
   color: var(--verification-footer-orange);
 }
 
 .choose-type .check {
   display: flex;
-  width: 300px;
+  width: 100%;
   height: 40px;
+  font-size: 0.9rem;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-grey);
@@ -32,9 +45,19 @@
 }
 
 .choose-type .professional-subtext {
-  margin-top: -15px;
+  margin-top: -10px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.7rem;
   line-height: 16px;
   color: var(--otp-resend-text);
+}
+
+@media screen and (min-height: 900px) {
+  .choose-type {
+    width: 21rem;
+    gap: 1.4rem !important;
+  }
+  .choose-type .professional-subtext {
+    margin-top: -20px;
+  }
 }

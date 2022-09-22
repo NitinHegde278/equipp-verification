@@ -39,6 +39,9 @@ const Onboard = () => {
             style={{
               background: `linear-gradient(263.44deg, #C76537 0.13%, #EF9571 30.69%, #BC5137 62.42%, #F6996B 117.66%)`,
               color: `#FFFFFF`,
+              width: `${
+                screenSize >= 576 && screenSize <= 815 ? "13rem" : "24rem"
+              }`,
             }}
             page="onboard"
           >

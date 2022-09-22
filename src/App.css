@@ -3,3 +3,39 @@
   height: 100vh;
   width: 100vw;
 }
+
+@media screen and (min-height: 900px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  html {
+    font-size: 92.5%;
+  }
+}
+
+@media screen and (max-height: 880px) {
+  html {
+    font-size: 90.5%;
+  }
+}
+
+@media screen and (max-height: 750px) {
+  html {
+    font-size: 85.5%;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  html {
+    font-size: 80.5%;
+  }
+}
+
+@media screen and (max-height: 590px) {
+  html {
+    font-size: 76.5%;
+  }
+}

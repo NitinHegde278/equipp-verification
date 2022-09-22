@@ -10,7 +10,7 @@ const NoPage = lazy(() => import("./components/no-page/no-page.component"));
 const App = () => {
   return (
     <Suspense fallback={<Loader />}>
-      <div className="App">
+      <div className="App d-flex justify-content-center align-items-center">
         <Routes>
           <Route index path="/" element={<Onboard />} />
           <Route path="layout/*" element={<Layout />} />

@@ -44,7 +44,7 @@ const Layout = () => {
         />
         {title && <div>{title}</div>}
       </div>
-      <div className="d-flex flex-row justify-content-center align-items-center layout-card">
+      <div className="d-flex justify-content-center align-items-center layout-card">
         <Routes>
           <Route
             index

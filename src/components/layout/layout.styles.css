@@ -6,7 +6,7 @@
 .header-container {
   column-gap: 20px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 1.8rem;
   line-height: 30px;
   color: var(--white-header);
 }
@@ -14,7 +14,7 @@
   background-color: var(--onboard-green);
 }
 .side-logo {
-  width: 40px;
+  width: 3.5rem;
   margin: 12px 0 12px 15vh;
   cursor: pointer;
 }
@@ -40,5 +40,8 @@
   .layout-card {
     align-items: flex-start !important;
     margin-top: 20px;
+  }
+  .header-container {
+    font-size: 1.6rem;
   }
 }

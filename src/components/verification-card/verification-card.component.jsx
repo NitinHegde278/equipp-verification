@@ -7,6 +7,7 @@ import { TEXT } from "../../utils/constants";
 import Button from "../utils/button/button.component";
 import Card from "../utils/card/card.component";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
+import LogoutBlack from "../../assets/icons/logoutBlack.svg";
 import "./verification-card.styles.css";
 import { useContext } from "react";
 import { VerificationContext } from "../../contexts/verification.context";
@@ -57,6 +58,10 @@ const VerificationCard = () => {
     }
     // eslint-disable-next-line
   }, [bankStatementStatus, professionStatus]);
+
+  const handleLogout = () => {
+    navigate("/layout/mobile");
+  };
 
   const handleNavigation = () => {
     switch (type) {
@@ -118,9 +123,19 @@ const VerificationCard = () => {
           : VerificationFailed
       }
     >
+      <img
+        src={LogoutBlack}
+        alt="Logout"
+        className="img logout-img"
+        onClick={handleLogout}
+      />
       <div className="ver-card-container">
         {(type === "pvtLlpPublic" || type === "partnershipFirm") && (
-          <div className="box pan-gst">
+          <div
+            className={`box pan-gst ${
+              type === "partnershipFirm" && "box-size"
+            }`}
+          >
             <div className="content">{TEXT.verificationCardPanGST}</div>
             <div className="status">
               <InputStatus input={coPanGstStatus} />
@@ -128,7 +143,11 @@ const VerificationCard = () => {
           </div>
         )}
         {type !== "pvtLlpPublic" && (
-          <div className="box pan-details">
+          <div
+            className={`box pan-details ${
+              type === "workingProfessional" && "box-size"
+            }`}
+          >
             <div className="content">{TEXT.verificationCardPan}</div>
             <div className="status">
               <InputStatus input={panStatus} />
@@ -184,6 +203,7 @@ const VerificationCard = () => {
           color: `#426572`,
           background: `#FFFFFF`,
           width: `100%`,
+          height: `45px`,
         }}
       >
         {verificationStatus === "pending" ? (

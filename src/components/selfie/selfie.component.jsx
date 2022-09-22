@@ -102,7 +102,7 @@ const Selfie = () => {
 
   return (
     <Card title={TEXT.selfieTitle}>
-      <div className="selfie-form d-flex flex-column align-items-center gap-2">
+      <div className="selfie-form d-flex flex-column align-items-center gap-3">
         <div className="selfie-container">
           <video
             id="selfie-video"

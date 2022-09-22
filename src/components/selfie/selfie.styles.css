@@ -1,47 +1,42 @@
 .selfie-form {
-  width: 300px;
+  width: 20rem;
 }
 .selfie-container {
-  width: 222px;
-  height: 220px;
+  width: 15rem;
+  height: 15rem;
   border: 1.5px solid var(--onboard-main-text);
   border-radius: 12px;
   overflow: hidden;
 }
 
 #selfie-video {
-  width: 297px;
-  height: 297px;
-  margin: -40px 0 0 -40px;
+  width: 15rem;
+  height: 15rem;
 }
 
 .selfie-image {
-  width: 116%;
-  height: 318px;
+  width: 16rem;
+  height: 16rem;
   border-radius: 12px;
-  margin-left: -10px;
 }
 
 .camera-text {
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 18px;
   width: 88%;
   text-align: center;
   color: var(--card-subtitle);
 }
+
 .hidden {
   display: none;
 }
 
-@media screen and (max-width: 450px) {
-  .selfie-image {
-    margin-top: -30px;
-  }
-}
-
-@media screen and (min-height: 645px) {
-  .selfie-image {
-    margin-top: -30px;
+@media screen and (min-height: 300px) {
+  @-moz-document url-prefix() {
+    .selfie-image {
+      height: 22rem;
+    }
   }
 }

@@ -1,23 +1,33 @@
+.no-page-container {
+  width: 23rem;
+}
+
 .main-text {
   width: 200px;
   color: var(--background-green);
   font-weight: 400;
-  font-size: 28px;
+  font-size: 2rem;
   line-height: 32px;
   text-align: center;
-  margin: auto;
+  margin-top: -20px;
 }
 
 .sub-text {
   width: 260px;
   color: var(--card-subtitle);
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 20px;
   text-align: center;
-  margin: 4vh auto;
+  margin: 4vh 0;
 }
 
 .mobile {
   color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 900px) {
+  .no-page-container {
+    width: 21rem;
+  }
 }

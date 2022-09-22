@@ -1,11 +1,12 @@
 .verify-bank-form {
-  width: 300px;
+  width: 22rem;
   margin-bottom: 15px;
 }
 
 .verify-bank-form #verifyPassword {
   margin-top: 50px;
   margin-bottom: 15px;
+  height: 40px;
 }
 
 .verify-bank-form #verifyPassword:focus {

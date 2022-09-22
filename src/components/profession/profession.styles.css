@@ -1,11 +1,13 @@
 .profession-check {
   margin-bottom: 20px;
+  width: 23rem;
+  margin-top: -10px;
 }
 
 .profession-check .check {
   display: flex;
-  width: 300px;
   height: 40px;
+  font-size: 1rem;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-grey);
@@ -18,4 +20,10 @@
 
 .profession-check .isActive {
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 900px) {
+  .profession-check {
+    width: 21rem;
+  }
 }

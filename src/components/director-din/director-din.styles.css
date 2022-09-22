@@ -1,8 +1,9 @@
 .director-din-form {
-  width: 300px;
+  width: 23rem;
 }
 
 .director-din-form .form-control {
+  height: 40px;
   margin-top: 15px;
 }
 
@@ -14,4 +15,10 @@
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 900px) {
+  .director-din-form {
+    width: 21rem;
+  }
 }

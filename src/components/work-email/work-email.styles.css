@@ -1,5 +1,5 @@
 .work-email-form {
-  width: 300px;
+  width: 22rem;
 }
 
 .work-email-form .form-control:focus {
@@ -10,4 +10,5 @@
 
 .work-email-form #workEmail {
   margin: 20px 0;
+  height: 40px;
 }

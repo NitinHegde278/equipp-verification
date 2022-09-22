@@ -1,11 +1,11 @@
 .bank-details-form {
-  width: 300px;
+  width: 23rem;
 }
 
 .bank-details-form #bankFile {
   height: 40px;
   font-weight: 350;
-  font-size: 14px;
+  font-size: 0.85rem;
   line-height: 14px;
 }
 
@@ -20,7 +20,7 @@
   width: 100%;
   height: 40px;
   font-weight: 350;
-  font-size: 14px;
+  font-size: 0.85rem;
   line-height: 14px;
   border: 1px solid var(--border-grey);
   border-radius: 8px;
@@ -34,13 +34,13 @@
 }
 
 .bank-box .bank-add {
-  font-size: 25px;
+  font-size: 2rem;
   color: var(--onboard-main-text);
 }
 
 .bank-file-label {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 10px;
   color: var(--verification-footer-orange);
   margin: 10px 0;
@@ -48,7 +48,7 @@
 
 .bank-details-form .pwd-protected {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 20px;
   color: var(--card-subtitle);
 }
@@ -63,8 +63,9 @@
 
 .pwd-checkbox .check {
   display: flex;
-  width: 160px;
+  width: 15rem;
   height: 40px;
+  font-size: 0.8rem;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border-grey);
@@ -82,12 +83,12 @@
 .bank-details-form .terms {
   margin-top: 10px;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 10px;
   color: var(--verification-footer-orange);
 }
 .bank-details-form #bankStatementTerms {
-  height: 22px;
+  height: 18px;
 }
 
 .bank-details-form #bankStatementTerms:checked {
@@ -98,4 +99,13 @@
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 900px) {
+  .bank-details-form {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 }

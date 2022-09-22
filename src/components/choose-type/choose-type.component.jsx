@@ -2,6 +2,7 @@ import { ReactComponent as ChooseTypeLogo } from "../../assets/images/ChooseType
 import { CHOOSE_TYPE, TEXT } from "../../utils/constants";
 import Card from "../utils/card/card.component";
 import GreenRightArrow from "../../assets/icons/greenRightArrow.svg";
+import LogoutBlack from "../../assets/icons/logoutBlack.svg";
 import "./choose-type.styles.css";
 import Button from "../utils/button/button.component";
 import { useContext, useEffect } from "react";
@@ -15,6 +16,10 @@ const ChooseType = ({ handleTitle }) => {
   useEffect(() => {
     handleTitle("");
   });
+
+  const handleLogout = () => {
+    navigate("/layout/mobile");
+  };
 
   const handleNavigation = () => {
     navigate(`/layout/verificationAnchor/${CHOOSE_TYPE[typeSelect]}`);
@@ -38,8 +43,17 @@ const ChooseType = ({ handleTitle }) => {
   return (
     <Card>
       <ChooseTypeLogo height={90} />
+      <img
+        src={LogoutBlack}
+        alt="Logout"
+        className="img logout-img"
+        onClick={handleLogout}
+      />
       <div className="choose-type d-flex flex-column align-items-center gap-3">
-        <div className="type-title">{TEXT.chooseTypeTitle}</div>
+        <div className="type-title">
+          {TEXT.chooseTypeTitle1}
+          <br /> {TEXT.chooseTypeTitle2}
+        </div>
         <div className="type-subtitle">{TEXT.chooseTypeSubtitle}</div>
         <div
           className={`check ${typeSelect === 1 && "isActive"}`}

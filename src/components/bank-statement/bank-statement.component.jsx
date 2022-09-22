@@ -72,7 +72,11 @@ const BankStatement = () => {
 
   return (
     <Card
-      title={TEXT.bankStatementTitle}
+      title={
+        <div>
+          {TEXT.bankStatementTitle1} <br /> {TEXT.bankStatementTitle2}
+        </div>
+      }
       subText={TEXT.bankStatementSubtitle}
       Image={BankStatementSvg}
       bankDate={dateStringCreator()}
