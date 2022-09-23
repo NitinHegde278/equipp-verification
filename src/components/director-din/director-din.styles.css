@@ -5,6 +5,7 @@
 .director-din-form .form-control {
   height: 40px;
   margin-top: 15px;
+  font-family: "Spline Sans";
   font-size: 0.9rem;
 }
 
@@ -16,6 +17,12 @@
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 700px) {
+  .director-din-form {
+    padding-bottom: 15px;
+  }
 }
 
 @media screen and (min-height: 900px) {

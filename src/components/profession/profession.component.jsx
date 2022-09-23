@@ -41,37 +41,39 @@ const Profession = () => {
       subText={TEXT.cardSubtitle}
       Image={ProfessionSvg}
     >
-      <div className="profession-check d-flex flex-column gap-2">
-        <div
-          className={`check prof-freelancer ${
-            professionSelect === 1 && "isActive"
-          }`}
-          onClick={handleChange}
-        >
-          FREELANCER
+      <div className="profession-container">
+        <div className="profession-check d-flex flex-column gap-2">
+          <div
+            className={`check prof-freelancer ${
+              professionSelect === 1 && "isActive"
+            }`}
+            onClick={handleChange}
+          >
+            FREELANCER
+          </div>
+          <div
+            className={`check prof-salaried ${
+              professionSelect === 2 && "isActive"
+            }`}
+            onClick={handleChange}
+          >
+            SALARIED
+          </div>
         </div>
-        <div
-          className={`check prof-salaried ${
-            professionSelect === 2 && "isActive"
-          }`}
-          onClick={handleChange}
+        <Button
+          style={{
+            border: `1px solid #C76537`,
+            color: `#426572`,
+            background: `#FFFFFF`,
+            width: `100%`,
+            height: `40px`,
+          }}
+          clickEvent={handleNavigation}
         >
-          SALARIED
-        </div>
+          CONTINUE &nbsp;
+          <img src={GreenRightArrow} alt="arrow" />
+        </Button>
       </div>
-      <Button
-        style={{
-          border: `1px solid #C76537`,
-          color: `#426572`,
-          background: `#FFFFFF`,
-          width: `100%`,
-          height: `40px`,
-        }}
-        clickEvent={handleNavigation}
-      >
-        CONTINUE &nbsp;
-        <img src={GreenRightArrow} alt="arrow" />
-      </Button>
     </Card>
   );
 };

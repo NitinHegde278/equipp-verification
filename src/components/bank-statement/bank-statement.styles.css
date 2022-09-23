@@ -4,6 +4,7 @@
 
 .bank-details-form #bankFile {
   height: 40px;
+  font-family: "Spline Sans";
   font-weight: 350;
   font-size: 0.9rem;
   line-height: 14px;
@@ -27,6 +28,7 @@
   cursor: pointer;
 }
 .bank-box .text {
+  font-family: "Spline Sans";
   color: #666768;
 }
 .bank-box .bank-required {
@@ -35,10 +37,12 @@
 
 .bank-box .bank-add {
   font-size: 2rem;
+  padding-bottom: 4px;
   color: var(--onboard-main-text);
 }
 
 .bank-file-label {
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 10px;
@@ -47,6 +51,7 @@
 }
 
 .bank-details-form .pwd-protected {
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 1rem;
   line-height: 20px;
@@ -65,6 +70,7 @@
   display: flex;
   width: 15rem;
   height: 40px;
+  font-family: "Spline Sans";
   font-size: 0.9rem;
   align-items: center;
   justify-content: center;
@@ -82,11 +88,16 @@
 
 .bank-details-form .terms {
   margin-top: 10px;
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 10px;
   color: var(--verification-footer-orange);
 }
+.bank-details-form .terms div {
+  padding-top: 4px;
+}
+
 .bank-details-form #bankStatementTerms {
   height: 18px;
 }
@@ -99,6 +110,12 @@
   box-shadow: 0 0 0.1rem var(--onboard-main-text),
     inset 0 0 0.1rem var(--onboard-main-text);
   border-color: var(--onboard-main-text);
+}
+
+@media screen and (min-height: 700px) {
+  .bank-details-form {
+    padding-bottom: 15px;
+  }
 }
 
 @media screen and (min-height: 900px) {

@@ -12,6 +12,7 @@
 .card-main-title {
   width: 16rem;
   color: var(--background-green);
+  font-family: "Red Hat Display";
   font-weight: 400;
   font-size: 2rem;
   line-height: 32px;
@@ -21,13 +22,15 @@
 
 .card-main-title .subtitle {
   width: 300px;
+  font-family: "Red Hat Display";
 }
 
 .card-subtitle {
   width: 22rem;
   color: var(--card-subtitle);
+  font-family: "Spline Sans";
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 20px;
   text-align: center;
   margin-top: 1vh;

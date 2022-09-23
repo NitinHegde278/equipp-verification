@@ -5,6 +5,7 @@
 
 .header-container {
   column-gap: 20px;
+  font-family: "Red Hat Display";
   font-weight: 700;
   font-size: 1.8rem;
   line-height: 30px;
@@ -42,6 +43,6 @@
     margin-top: 20px;
   }
   .header-container {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }

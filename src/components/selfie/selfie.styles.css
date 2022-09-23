@@ -21,6 +21,7 @@
 }
 
 .camera-text {
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 18px;
@@ -38,6 +39,12 @@
     .selfie-image {
       height: 22rem;
     }
+  }
+}
+
+@media screen and (min-height: 700px) {
+  .selfie-form {
+    padding-bottom: 15px;
   }
 }
 

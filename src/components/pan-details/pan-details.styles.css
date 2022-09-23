@@ -4,6 +4,7 @@
 
 .pan-details-form .form-control {
   height: 40px;
+  font-family: "Spline Sans";
   font-weight: 350;
   font-size: 0.9rem;
   line-height: 14px;
@@ -27,6 +28,7 @@
   cursor: pointer;
 }
 .pan-box .text {
+  font-family: "Spline Sans";
   color: #666768;
 }
 .pan-box .pan-required {
@@ -35,10 +37,12 @@
 
 .pan-box .pan-add {
   font-size: 2rem;
+  padding-bottom: 4px;
   color: var(--onboard-main-text);
 }
 
 .pan-file-label {
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 10px;
@@ -59,11 +63,18 @@
 
 .pan-details-form .pan-error {
   padding: 8px 0;
+  font-family: "Spline Sans";
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 10px;
   color: var(--wrong-input-orange);
   margin-top: -15px;
+}
+
+@media screen and (min-height: 700px) {
+  .pan-details-form {
+    padding-bottom: 15px;
+  }
 }
 
 @media screen and (min-height: 900px) {

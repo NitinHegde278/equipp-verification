@@ -1,7 +1,7 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: all 0.5s ease !important;
+  transition: all 0.3s ease !important;
   box-sizing: border-box;
 }
 
@@ -25,7 +25,7 @@ code {
   --onboard-green: #184449;
   --onboard-sub-text: #e6e7e8;
   --onboard-main-text: #e8815d;
-  --card-subtitle: #494949;
+  --card-subtitle: #717478;
   --otp-resend-text: #8c8d8d;
   --order-card-title: #3e3e3e;
   --order-header-grey: #999999;
